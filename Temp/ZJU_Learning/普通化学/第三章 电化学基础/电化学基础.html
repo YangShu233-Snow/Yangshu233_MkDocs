@@ -1,0 +1,1438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+      
+      
+        <link rel="next" href="../%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html">
+      
+      
+      <link rel="icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>第三章 电化学基础 - 杨树の宝藏小屋</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-header__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            杨树の宝藏小屋
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第三章 电化学基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-nav__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    杨树の宝藏小屋
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Self_Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Self_Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PythonCrawler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            PythonCrawler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第三章 基本库的使用
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            第三章 基本库的使用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Self_Learning/PythonCrawler/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E5%BA%93%E4%BD%BF%E7%94%A8/urllib.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    urllib库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Self_Learning/PythonCrawler/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E5%BA%93%E4%BD%BF%E7%94%A8/requests.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    requests库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Self_Learning/PythonCrawler/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E5%BA%93%E4%BD%BF%E7%94%A8/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    re库(正则表达式)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ZJU_Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ZJU_Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    普通化学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            普通化学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../普通化学/第一章 化学动力学/化学动力学.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一章 化学动力学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二章 化学热力学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第三章 电化学基础
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E7%94%B5%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    第三章 电化学基础
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1原电池
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1原电池">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 原电池构成与表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 原电池电动势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 电极和电动势
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 电极和电动势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 电极电动势的产生
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 相对电极电势
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 电极电势的能斯特方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 化学反应平衡常数的测定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5 拓展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.5 拓展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3251" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5.1 离子选择电极
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3252" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5.2 气敏电极
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 电解池
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 本篇涉及公式速览
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第四章 化学动力学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E7%89%A9%E8%B4%A8%E7%BB%93%E6%9E%84/%E7%89%A9%E8%B4%A8%E7%BB%93%E6%9E%84.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第五章 物质结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E6%9C%89%E6%9C%BA%E5%8C%96%E5%90%88%E7%89%A9/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%90%88%E7%89%A9.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第六章 有机化合物
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E9%85%8D%E4%BD%8D%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80/%E9%85%8D%E4%BD%8D%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第七章 配位化学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E4%BB%AA%E5%99%A8%E5%88%86%E6%9E%90%E7%AE%80%E4%BB%8B/%E4%BB%AA%E5%99%A8%E5%88%86%E6%9E%90%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第八章 仪器分析简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    自制历年卷
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            自制历年卷
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%87%AA%E5%88%B6%E5%8E%86%E5%B9%B4%E5%8D%B7/24-25%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2%E6%9C%9F%E6%9C%AB%E5%9B%9E%E5%BF%86%E5%8D%B7/%E6%99%AE%E5%8C%96%E5%AE%9E%E9%AA%8C%E7%94%B2%E5%9B%9E%E5%BF%86%E5%8D%B7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24-25普通化学实验期末回忆卷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%87%AA%E5%88%B6%E5%8E%86%E5%B9%B4%E5%8D%B7/24-25%E5%8C%BB%E5%AD%A6%E7%94%9F%E5%91%BD%E5%9F%BA%E7%A1%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%9B%9E%E5%BF%86%E5%8D%B7/24-25%E5%8C%BB%E5%AD%A6%E7%94%9F%E5%91%BD%E5%9F%BA%E7%A1%80%E5%9B%9E%E5%BF%86%E5%8D%B7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24-25医学生命基础期末考试回忆卷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1原电池
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1原电池">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 原电池构成与表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 原电池电动势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 电极和电动势
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 电极和电动势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 电极电动势的产生
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 相对电极电势
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 电极电势的能斯特方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 化学反应平衡常数的测定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5 拓展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.5 拓展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3251" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5.1 离子选择电极
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3252" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5.2 气敏电极
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 电解池
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 本篇涉及公式速览
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">电化学基础</h1>
+<h2 id="31">3.1原电池</h2>
+<h3 id="311">3.1.1 原电池构成与表示</h3>
+<p>我们从<strong>铜锌电池</strong>开始：<br>
+<font size=2>(假如我们有盐桥)</font></p>
+<p>铜锌电池图示：</p>
+<p><img alt="原电池图示" src="images/%E5%8E%9F%E7%94%B5%E6%B1%A0%E5%9B%BE%E7%A4%BA.png" /></p>
+<div class="arithmatex">\[
+(-)Zn\ |\ ZnSO_4(c_1)\ ||\ CuSO_4\ |\ Cu(+) 
+\]</div>
+<blockquote>
+<p><font size=4><strong>Tips:</strong>：</font> <br>
+负极(阳极)写在左边, 正极(阴极)写在右边, 以双(虚)垂线"||"表示盐桥, 以单垂线"|"表示相界</p>
+</blockquote>
+<p>更多示例：</p>
+<div class="arithmatex">\[
+(-)Zn\ |\ H_2SO_4\ |\ Cu(+)\quad\quad{\footnotesize 伏打电池}
+\]</div>
+<h3 id="312">3.1.2 原电池电动势</h3>
+<p>对于电功：</p>
+<div class="arithmatex">\[
+W_f=qE=nFE\\
+\]</div>
+<blockquote>
+<p><font size=4><strong>Tips</strong>:</font><br>
+<span class="arithmatex">\(其中F为法拉第常量\\
+F=96485\ C·mol^{-1}\approx 96500\ C·mol^{-1}\)</span><br>
+<span class="arithmatex">\(n为发生1mol电池反应时电极通过电子的物质的量\)</span></p>
+</blockquote>
+<p>对于自由能增量：</p>
+<div class="arithmatex">\[
+\Delta_r G_m\leq-W_f
+\]</div>
+<p>当电池反应可逆(即电流无限小)</p>
+<div class="arithmatex">\[
+\Delta_r G_m=-W_f=-nFE
+\]</div>
+<div class="arithmatex">\[
+E={-\Delta_r G_m \over nF}
+\]</div>
+<p>若原电池各个组分都处在<strong>标准状态</strong>下，电池的电动势记为<span class="arithmatex">\({E^\theta}\)</span>，则</p>
+<div class="arithmatex">\[
+E^\theta={-\Delta_r G^\theta _m \over nF}
+\]</div>
+<p>进一步讨论电动势和反应组分浓度的关系，我们有化学反应：</p>
+<div class="arithmatex">\[
+aA(aq) + bB(aq) \xlongequal{\quad} gG(aq) + dD(aq)
+\]</div>
+<p>其自由能增量<span class="arithmatex">\(\Delta_r G _m\)</span>为</p>
+<div class="arithmatex">\[\begin{aligned}
+\Delta_r G _m &amp;= \Delta_r G^\theta _m + RT\ln\frac{[{c(G) \over c^\theta}]^g[{c(D) \over c^\theta}]^d}{[{c(A) \over c^\theta}]^a[{c(B) \over c^\theta}]^b}
+\end{aligned}\]</div>
+<p>代入<span class="arithmatex">\(\Delta_r G_m=-nFE\)</span></p>
+<div class="arithmatex">\[\begin{aligned}
+nFE &amp;= nFE^\theta - RT\ln\frac{[{c(G) \over c^\theta}]^g[{c(D) \over c^\theta}]^d}{[{c(A) \over c^\theta}]^a[{c(B) \over c^\theta}]^b}\\
+\\
+E &amp;= E^\theta - {RT \over nF}\ln\frac{[{c(G) \over c^\theta}]^g[{c(D) \over c^\theta}]^d}{[{c(A) \over c^\theta}]^a[{c(B) \over c^\theta}]^b}
+\end{aligned}\]</div>
+<p><font size = 1></p>
+<div class="arithmatex">\[
+{电动势能斯特(Nernst)方程}
+\]</div>
+<p></font></p>
+<p><a id="section2"></a></p>
+<blockquote>
+<p><font size=4><strong>Tips</strong>:</font><br>
++ <span class="arithmatex">\({E^\theta}\)</span>是标准电动势（电池反应各组分处于标准状态的电池的电动势）</p>
+<ul>
+<li>电池的电动势与各组分浓度有关。</li>
+</ul>
+<ul>
+<li>同理于反应平衡常数，能斯特方程中不出现<strong>纯的凝聚态物质</strong>（如纯固体和纯液体等）的浓度，或者把它当做"1"。对于气体组分，能斯特方程中以 <span class="arithmatex">\({p/p^\theta}\)</span> 代替。</li>
+</ul>
+</blockquote>
+<p><br></p>
+<h2 id="32">3.2 电极和电动势</h2>
+<h3 id="321">3.2.1 电极电动势的产生</h3>
+<p><font size=4>电极电动势<span class="arithmatex">\((\varphi)\)</span>：</font></p>
+<p><font size =4><strong>双电层理论:</strong></font><br>
+<strong>电极表面与溶液中零电势处的电势差是该电极的(绝对)电极电势</strong></p>
+<blockquote>
+<p><font size =4><strong>Tips:</strong></font><br>
+1. 金属阳离子从电极上进入溶液，电子留在电极上；
+2. 溶液中形成紧密层、扩散层(静电作用和热运动）；
+3. 电势分布曲线：远离电极处为零电势，电极表面具有不为零的电势。</p>
+</blockquote>
+<p><img alt="双电层理论-1" src="images/%E5%8F%8C%E7%94%B5%E5%B1%82%E7%90%86%E8%AE%BA-1.png" />
+<img alt="双电层理论-2" src="images/%E5%8F%8C%E7%94%B5%E5%B1%82%E7%90%86%E8%AE%BA-2.png" /></p>
+<p><br></p>
+<p>由于不同金属离子进入到不同溶液的能力不同，<strong>电极种类</strong>和<strong>溶液浓度</strong>都会对电极电势产生影响</p>
+<p><strong>电动势就是两电极的电势差：</strong>
+$$
+E=\varphi(正极)-\varphi(负极)
+$$</p>
+<h3 id="322">3.2.2 相对电极电势</h3>
+<blockquote>
+<p><font size=4><strong>Tips:</strong></font><br>
+电池由两个半电池组成，每个半电池都由一个氧化/还原对组成。（例如：<span class="arithmatex">\({Cu^{2+}/\ Cu}\)</span>）<br></p>
+<p>一个电极得氧化/还原对分别对应一个半反应，这个电极的其中一个半反应是：<span class="arithmatex">\({Cu - 2e^- \xlongequal{\quad}\ Cu^{2+}}{\quad\footnotesize （还原对上的半反应）}\)</span></p>
+<p>应该指出的是，在特定的原电池中，一个电极只发生一个半反应，至于是氧化还是还原对，取决于其在原电池中充当正极还是负极。</p>
+</blockquote>
+<p>电动势等于：
+$$
+E=\varphi(正极)-\varphi(负极)
+$$</p>
+<p><strong>标准氢电极( SHE )：处于标准状态下的氢电极</strong></p>
+<div class="arithmatex">\[
+Pt\ |\ H_2 (p = p^\theta)\ |\ H^+\ (c = 1\ mol·L^{-1})
+\]</div>
+<p>即在<span class="arithmatex">\({c_{(H^+)}=1\ mol·L^{-1}}\)</span>和<span class="arithmatex">\({p_{(H_2)}}=1\ atm\)</span>的条件下，以用铂黑作为电极的体系称为标准氢电极。</p>
+<blockquote>
+<p><font size=4><strong>Tips</strong></font>
++ <span class="arithmatex">\({1\ atm=101325\ kPa}\)</span>
++ 铂黑电极是表面镀铂的铂电极，优点是表面积大
+，有利于氢气逸出。</p>
+</blockquote>
+<p>电极反应式:</p>
+<div class="arithmatex">\[
+2H^+(1\ mol·L^{-1}) + 2e^- \longrightarrow H_2\ (100\ kPa) 
+\]</div>
+<p>将待测电极<span class="arithmatex">\({\rm (A^+/\ A)}\)</span>与标准氢电极<span class="arithmatex">\({\rm (H^+/\ H)}\)</span>组成原电池，规定标准氢电极电势为0，则该原电池电动势为待测电极电势的绝对值。<br>
+<font size=4>即：</font></p>
+<div class="arithmatex">\[
+E=|\varphi^\theta(H^+/H_2)-\varphi(A^+/A)|
+\]</div>
+<p>其中电极<span class="arithmatex">\({\rm (A^+/\ A)}\)</span>的正负号确定，取决于其在测量时候发生的是氧化反应(正号"+")还是还原反应(负号"-")。</p>
+<blockquote>
+<p><font size=4><strong>Tips</strong>:</font><br>
+对于确定的电极，其的电极电势不因为其发生的是氧化/还原反应而改变，因为其电极电势是参照标准氢电极比较的。</p>
+</blockquote>
+<p><font size=4><strong>参比电极：甘汞电极</strong></font></p>
+<div class="arithmatex">\[
+Cl^-\ |\ Hg_2Cl_2(s)\ |\ Hg\\
+\]</div>
+<p>其电化学方程式：
+$$
+{1 \over 2}Hg_2Cl_2 + e^- \longrightarrow Hg + Cl^-
+$$</p>
+<h3 id="323">3.2.3 电极电势的能斯特方程</h3>
+<p><font size=4><strong>电极电势的能斯特方程</strong></font></p>
+<p><strong>有反应：</strong></p>
+<div class="arithmatex">\[
+aA+ne^-\underset{}{=\!=\!=}\ bB\\
+\]</div>
+<p><strong>有能斯特方程：</strong></p>
+<div class="arithmatex">\[
+\varphi=\varphi^\theta-{RT \over nF}\ln{[{c(B) \over c^\theta}]^b \over [{c(A) \over c^\theta}]^a }
+\]</div>
+<p><a id="电极电势能斯特方程解释"></a></p>
+<blockquote>
+<p><font size=4><strong>Tips</strong>:</font><br>
+上式中真数分子为还原态物质浓度(发生还原反应)，分母为氧化态物质浓度(发生氧化反应)</p>
+</blockquote>
+<p>对于<span class="arithmatex">\({c/c^\theta}\)</span>，若组分是<strong>纯固体/纯液体</strong>，则浓度取1；若组分是气体，则用<span class="arithmatex">\({p/p^\theta}\)</span>代替。<a href="#section2">在前文有讨论过此点</a></p>
+<blockquote>
+<p><font size=4><strong>Thinking</strong>:</font><br>
+联系以上公式，可以解答普化实验中为什么pH计在使用时候要设置温度。</p>
+</blockquote>
+<p>下举一个例题说明能斯特方程的运用：</p>
+<p><img alt="电极电势能斯特方程-例题-1" src="images/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF%E8%83%BD%E6%96%AF%E7%89%B9%E6%96%B9%E7%A8%8B-%E4%BE%8B%E9%A2%98-1.png" /></p>
+<p><font size=4><strong>电极电势与电动势的关系：</strong></font></p>
+<p>对于标准氢电极与Ag电极组成的原电池：</p>
+<div class="arithmatex">\[
+Pt\ |\ H_2(p^\theta)\ |\ H^+(c_{(H^+)}=1\ mol·L^{-1})\ ||\ Ag^+(c)\ |\ Ag
+\]</div>
+<p>有电池反应式：</p>
+<div class="arithmatex">\[
+{1 \over 2}H_2(p^\theta) + Ag^ + (c) \longrightarrow Ag(s) + H^+\ (c_{(H^+)}=1\ mol·L^{-1})\\
+\]</div>
+<div class="arithmatex">\[
+E = \varphi(Ag^+/Ag) = E^\theta - {RT \over F}\ln{{1 \over c_{Ag^+}}}
+\]</div>
+<p>显然，在标准状态下：</p>
+<div class="arithmatex">\[
+E = E^\theta = \varphi ^ \theta (Ag^+/Ag)
+\]</div>
+<p>下举两道例题说明如何计算电极电势：</p>
+<p><img alt="电极电势计算-例题-1" src="images/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF%E8%AE%A1%E7%AE%97-%E4%BE%8B%E9%A2%98-1.png" />
+<img alt="电极电势计算-例题-2" src="images/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF%E8%AE%A1%E7%AE%97-%E4%BE%8B%E9%A2%98-2.png" /></p>
+<blockquote>
+<p><font size=4><strong>Tips：</strong></font><br>
++ 电池电动势是整个原电池所具有的电动势，其是由正负电极电势之差决定的</p>
+<ul>
+<li>电极电势是电极自身在特定条件下所具有的电势，其取决于电极材料，溶液性质和温度等因素</li>
+</ul>
+<ul>
+<li>电极电势可通过其所发生的半反应来计算，至于是氧化对还是还原对发生反应则不会影响计算结果。<a href="#电极电势能斯特方程解释">理由于此。</a></li>
+</ul>
+</blockquote>
+<h3 id="324">3.2.4 化学反应平衡常数的测定</h3>
+<p>我们观察化学热力学与电化学的两个重要公式：</p>
+<div class="arithmatex">\[  
+\begin{aligned}
+&amp;\Delta_r G^\theta _m = -RT\ln{K^\theta}\\
+&amp;\Delta_r G^\theta _m = -nFE^\theta
+\end{aligned}\]</div>
+<p>不难看出，<span class="arithmatex">\({K^\theta}\)</span>与<span class="arithmatex">\({E^\theta}\)</span>有关系如下：</p>
+<div class="arithmatex">\[
+\ln{K^\theta}={nFE^\theta \over RT}
+\]</div>
+<p>只要我们知道某一反应式的原电池形式下的标准电动势，就可以知道在特定温度下该反应的平衡常数，进而得到<span class="arithmatex">\({\Delta_r G^\theta _m}\)</span>，<span class="arithmatex">\({\Delta_r H^\theta _m}\)</span>，<span class="arithmatex">\({\Delta_r S^\theta _m}\)</span>。</p>
+<div class="arithmatex">\[
+E^\theta\Longrightarrow K^\theta\Longrightarrow
+{\Delta_r G^\theta _m}
+\]</div>
+<div class="arithmatex">\[
+{{\rm d}\ln K^\theta \over {\rm d}T} = {{\Delta_r H^\theta _m} \over RT^2}\\
+\ \\
+{\small 不同温度下K^\theta 或者E^\theta\Longrightarrow \Delta_r H^\theta _m , \ \Delta_r S^\theta _m}
+\]</div>
+<p>下给出两个例题，来说明以上推导如何运用：</p>
+<p><img alt="电动势与热力学联系-例题-1" src="images/%E7%94%B5%E5%8A%A8%E5%8A%BF%E4%B8%8E%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%81%94%E7%B3%BB-%E4%BE%8B%E9%A2%98-1.png" />
+<img alt="电动势与热力学联系-例题-2" src="images/%E7%94%B5%E5%8A%A8%E5%8A%BF%E4%B8%8E%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%81%94%E7%B3%BB-%E4%BE%8B%E9%A2%98-2.png" /></p>
+<h3 id="325">3.2.5 拓展</h3>
+<h4 id="3251">3.2.5.1 离子选择电极</h4>
+<p>离子选择电极是专门用来测量溶液中某种特定离子浓度的指示电极。其中的一个例子就是在普化实验中用到的<strong>玻璃电极</strong>。</p>
+<blockquote>
+<p><font size=4><strong>Tips：</strong></font><br>
+<font size=2>玻璃电极作为测量pH的电极可看作是<span class="arithmatex">\({H^+}\)</span>离子选择电极的一个例子。若将玻璃成分改变一下，并加入一些<span class="arithmatex">\({Al_2O_3}\)</span>，即玻璃的基本组成为<span class="arithmatex">\({Na_2O-A1_2O_3-SiO_2}\)</span>，则能使玻璃电极的电势对其它阳离子，如：<span class="arithmatex">\({Na^+}\)</span>，<span class="arithmatex">\({K^+}\)</span>，<span class="arithmatex">\({NH_4^+}\)</span>，<span class="arithmatex">\({Ag^+}\)</span>，<span class="arithmatex">\({Tl^+}\)</span>，<span class="arithmatex">\({Li^+}\)</span>，<span class="arithmatex">\({Rb^+}\)</span>，<span class="arithmatex">\({Cs+}\)</span>等各种一价阳离子具有特殊的选择性，即电极电势与某特定离子的浓度有关。</font></p>
+</blockquote>
+<p><font size=4><strong>测量溶液的pH值:</strong></font></p>
+<p>就是测量溶液中<span class="arithmatex">\({H^+}\)</span>的浓度。用玻璃电极作为指示
+电极、甘汞电极为参比电极，与待测溶液组成原电池:</p>
+<p><span class="arithmatex">\({\small 饱和甘汞电极\ ||\ 试样溶液\ |\ pH玻璃电极}\)</span></p>
+<p>测量该电池的电动势，即可求得溶液中<span class="arithmatex">\({H^+}\)</span>的浓度。</p>
+<h4 id="3252">3.2.5.2 气敏电极</h4>
+<p>气敏电极是一种电化学气体传感器。它利用气敏电极或气体扩散电极测量混合气中或溶解在溶液中的某种气体的含量。其中典型的例子是<span class="arithmatex">\({CO_2}\)</span>气敏电极。</p>
+<p><img alt="气敏电极示例图" src="images/%E6%B0%94%E6%95%8F%E7%94%B5%E6%9E%81%E7%A4%BA%E4%BE%8B%E5%9B%BE.png" /></p>
+<h2 id="33">3.3 电解池</h2>
+<blockquote>
+<p>由于本块内容在普通化学<span class="arithmatex">\({\mathrm{I}{\rm (H)}}\)</span>中不作过的涉及，故附两张PPT仅作诠释：</p>
+</blockquote>
+<p><img alt="电解池-1" src="images/%E7%94%B5%E8%A7%A3%E6%B1%A0-1.png" />
+<img alt="电解池-2" src="images/%E7%94%B5%E8%A7%A3%E6%B1%A0-2.png" /></p>
+<h2 id="34">3.4 本篇涉及公式速览</h2>
+<ol>
+<li>对于电功：</li>
+</ol>
+<div class="arithmatex">\[
+W_f=qE=nFE\\
+\]</div>
+<ol>
+<li>对于自由能增量：</li>
+</ol>
+<div class="arithmatex">\[
+\Delta_r G_m\leq-W_f
+\]</div>
+<ol>
+<li>对于电池电动势：</li>
+</ol>
+<div class="arithmatex">\[
+E={-\Delta_r G_m \over nF}
+\]</div>
+<ol>
+<li>对于以下电化学方程式电动势计算：</li>
+</ol>
+<div class="arithmatex">\[
+aA(aq) + bB(aq) \xlongequal{\quad} gG(aq) + dD(aq)
+\]</div>
+<div class="arithmatex">\[
+E = E^\theta - {RT \over nF}\ln\frac{[{c(G) \over c^\theta}]^g[{c(D) \over c^\theta}]^d}{[{c(A) \over c^\theta}]^a[{c(B) \over c^\theta}]^b}
+\]</div>
+<div class="arithmatex">\[
+{\footnotesize 电动势能斯特(Nernst)方程}
+\]</div>
+<ol>
+<li>电池电动势等于：</li>
+</ol>
+<div class="arithmatex">\[
+E=\varphi(正极)-\varphi(负极)
+\]</div>
+<ol>
+<li>电极电动势能斯特方程：</li>
+</ol>
+<div class="arithmatex">\[
+\varphi=\varphi^\theta-{RT \over nF}\ln{[{c(B) \over c^\theta}]^b \over [{c(A) \over c^\theta}]^a }
+\]</div>
+<ol>
+<li>电化学与热力学的联系：
+$$<br />
+\begin{aligned}
+\Delta_r G^\theta _m &amp;= -RT\ln{K^\theta}\
+\Delta_r G^\theta _m &amp;= -nFE^\theta\
+\ln{K^\theta} &amp;= {nFE^\theta \over RT}\
+{{\rm d}\ln K^\theta \over {\rm d}T} &amp;= {{\Delta_r H^\theta _m} \over RT^2}
+\end{aligned}$$</li>
+</ol>
+<div class="arithmatex">\[
+\lim_{x \rightarrow \infty}\frac{\ln n}{\ln (\sqrt{n^2 + 1} + n)}
+\]</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

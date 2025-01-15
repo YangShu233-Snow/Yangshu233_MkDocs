@@ -1,0 +1,2152 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../../index.html">
+      
+      
+        <link rel="next" href="requests.html">
+      
+      
+      <link rel="icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>urllib库 - 杨树の宝藏小屋</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pyhonurllib" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-header__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            杨树の宝藏小屋
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              urllib库
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-nav__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    杨树の宝藏小屋
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Self_Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Self_Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PythonCrawler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            PythonCrawler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第三章 基本库的使用
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            第三章 基本库的使用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    urllib库
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="urllib.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    urllib库
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#urllib" class="md-nav__link">
+    <span class="md-ellipsis">
+      urllib类库介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urllibrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib发送请求——request模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib发送请求——request模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlopen" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlopen()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="urlopen()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlopen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlopen()函数的简单应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlopen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      用urlopen()函数传递更多参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handleropener" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级用法——Handler和Opener
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urlliberror" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib处理异常——error模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib处理异常——error模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      error模块介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLError类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httperror" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPError类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urllibparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib解析链接——parse模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib解析链接——parse模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlparse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlunparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlunparse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlsplit" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlsplit()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlunsplit" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlunsplit()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urljoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      urljoin()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlencode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse_qsparse_qsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse_qs()，parse_qsl()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      quote()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unquote" class="md-nav__link">
+    <span class="md-ellipsis">
+      unquote()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robots" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析Robots协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分析Robots协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robots协议介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      爬虫名称
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      robotparser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requests.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    requests库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    re库(正则表达式)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ZJU_Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ZJU_Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    普通化学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            普通化学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/普通化学/第一章 化学动力学/化学动力学.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一章 化学动力学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二章 化学热力学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E7%94%B5%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%94%B5%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第三章 电化学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E5%8C%96%E5%AD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第四章 化学动力学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E7%89%A9%E8%B4%A8%E7%BB%93%E6%9E%84/%E7%89%A9%E8%B4%A8%E7%BB%93%E6%9E%84.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第五章 物质结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E6%9C%89%E6%9C%BA%E5%8C%96%E5%90%88%E7%89%A9/%E6%9C%89%E6%9C%BA%E5%8C%96%E5%90%88%E7%89%A9.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第六章 有机化合物
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E9%85%8D%E4%BD%8D%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80/%E9%85%8D%E4%BD%8D%E5%8C%96%E5%AD%A6%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第七章 配位化学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6/%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E4%BB%AA%E5%99%A8%E5%88%86%E6%9E%90%E7%AE%80%E4%BB%8B/%E4%BB%AA%E5%99%A8%E5%88%86%E6%9E%90%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第八章 仪器分析简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    自制历年卷
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            自制历年卷
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E8%87%AA%E5%88%B6%E5%8E%86%E5%B9%B4%E5%8D%B7/24-25%E6%99%AE%E9%80%9A%E5%8C%96%E5%AD%A6%E5%AE%9E%E9%AA%8C%E7%94%B2%E6%9C%9F%E6%9C%AB%E5%9B%9E%E5%BF%86%E5%8D%B7/%E6%99%AE%E5%8C%96%E5%AE%9E%E9%AA%8C%E7%94%B2%E5%9B%9E%E5%BF%86%E5%8D%B7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24-25普通化学实验期末回忆卷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ZJU_Learning/%E8%87%AA%E5%88%B6%E5%8E%86%E5%B9%B4%E5%8D%B7/24-25%E5%8C%BB%E5%AD%A6%E7%94%9F%E5%91%BD%E5%9F%BA%E7%A1%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%9B%9E%E5%BF%86%E5%8D%B7/24-25%E5%8C%BB%E5%AD%A6%E7%94%9F%E5%91%BD%E5%9F%BA%E7%A1%80%E5%9B%9E%E5%BF%86%E5%8D%B7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24-25医学生命基础期末考试回忆卷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#urllib" class="md-nav__link">
+    <span class="md-ellipsis">
+      urllib类库介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urllibrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib发送请求——request模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib发送请求——request模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlopen" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlopen()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="urlopen()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlopen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlopen()函数的简单应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlopen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      用urlopen()函数传递更多参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handleropener" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级用法——Handler和Opener
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urlliberror" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib处理异常——error模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib处理异常——error模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      error模块介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLError类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httperror" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPError类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urllibparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用urllib解析链接——parse模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用urllib解析链接——parse模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urlparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlparse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlunparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlunparse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlsplit" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlsplit()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlunsplit" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlunsplit()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urljoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      urljoin()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      urlencode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse_qsparse_qsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      parse_qs()，parse_qsl()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      quote()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unquote" class="md-nav__link">
+    <span class="md-ellipsis">
+      unquote()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robots" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析Robots协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分析Robots协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robots协议介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      爬虫名称
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      robotparser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pyhonurllib">Pyhon类库——urllib</h1>
+<h2 id="urllib">urllib类库介绍</h2>
+<p><a href="https://docs.python.org/3/library/urllib/html">urllib官方文档</a>，可供参考</p>
+<p>urllib库是Python内置的HTTP请求库，包含有：
++ <b>request：</b>最基本的HTPP请求模块，用于<u>模拟发送请求</u>
++ <b>error：</b>异常处理模块，用于<u>捕获异常</u>
++ <b>parse：</b>工具模块，用于<u>URL的拆分解析和合并</u>
++ <b>robotparse：</b>用于<u>识别网站的robots.txt文件</u></p>
+<h2 id="urllibrequest">使用urllib发送请求——request模块</h2>
+<p>如果我们要向一个服务器发送请求，可以使用urllib的<strong>request模块</strong>，以下有具体用法：</p>
+<h3 id="urlopen">urlopen()</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># urlopen()函数的API</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">timeout</span><span class="p">,]</span><span class="o">*</span><span class="p">,</span> <span class="n">cafile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">capath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cadefault</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<p>urlopen函数可以模拟浏览器请求发起的过程，同时具有处理授权验证，重定向，浏览器Cookies以及其他内容的能力。</p>
+<hr />
+<h4 id="urlopen_1">urlopen()函数的简单应用</h4>
+<p>示例如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#引入urllib中的request模块</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#设定我们要请求的url</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.baidu.com&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#向服务器请求，并抓取与打印网页</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#输出为：</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">&lt;html&gt;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">&lt;head&gt;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="sd">        &lt;script&gt;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="sd">                location.replace(location.href.replace(&quot;https://&quot;,&quot;http://&quot;));</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="sd">        &lt;/script&gt;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="sd">&lt;/head&gt;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sd">&lt;body&gt;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sd">        &lt;noscript&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=http://www.baidu.com/&quot;&gt;&lt;/noscript&gt;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="sd">&lt;/body&gt;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="sd">&lt;/html&gt;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>关于urlopen的返回类型：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#输出为：</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">&lt;class &#39;http.client.HTTPResponse&#39;&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>可见其返回了一个<b>HTTPResponse类型</b>的对象，主要包含：
++ read()、readinto()、getheader(name)、getheaders()、fileno()等方法
++ msg、version、status、reason、debuglevel、closed等属性</p>
+<p>在先前的示例中，将urlopen返回的对象赋值给了response，并通过read()方法得到了返回的网页内容</p>
+<p>再举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://limestart.cn&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># HTTP状态码</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># ResponseHeaders的信息</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">getheaders</span><span class="p">())</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># ResponseHeaders中Server的值（键值对列表）</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s1">&#39;Server&#39;</span><span class="p">))</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># 输出为：</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="sd">200</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="sd">[(&#39;Server&#39;, &#39;marco/3.2&#39;), (&#39;Date&#39;, &#39;Fri, 10 Jan 2025 06:31:41 GMT&#39;), (&#39;Content-Type&#39;, &#39;text/html&#39;), (&#39;Content-Length&#39;, &#39;34816&#39;), (&#39;Connection&#39;, &#39;close&#39;), (&#39;Vary&#39;, &#39;Accept-Encoding&#39;), (&#39;X-Request-Id&#39;, &#39;94a2e047a38db6f41d0a7e8baa743d79; 604b32f5000d0dd6fe198ad8df643366; 1e85d223d6fbe69ee3bb255e575aebdc; cf33fdf0a3ccedbb3b4553f02cc2860f&#39;), (&#39;X-Source&#39;, &#39;U/200&#39;), (&#39;X-Upyun-Content-Length&#39;, &#39;34816&#39;), (&#39;ETag&#39;, &#39;&quot;898bd6c8e4bde082079bcb10bd61b5f6&quot;&#39;), (&#39;Last-Modified&#39;, &#39;Fri, 20 Dec 2024 19:51:18 GMT&#39;), (&#39;X-Upyun-Content-Type&#39;, &#39;text/html&#39;), (&#39;Expires&#39;, &#39;Fri, 10 Jan 2025 06:31:41 GMT&#39;), (&#39;Cache-Control&#39;, &#39;max-age=0&#39;), (&#39;Accept-Ranges&#39;, &#39;bytes&#39;), (&#39;Via&#39;, &#39;T.105.H, V.403-zj-sad-106, S.mix-zj-sad3-001, T.1.H, V.mix-zj-sad3-005, T.36.H, M.ctn-fj-quz-038&#39;), (&#39;Strict-Transport-Security&#39;, &#39;max-age=31536000&#39;), (&#39;Content-Security-Policy&#39;, &quot;frame-ancestors &#39;self&#39; chrome-extension: moz-extension:&quot;)]</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="sd">marco/3.2</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>我们通过status和调用getheader()，分别得到了响应的状态码(200)与目标服务器是用marco搭建的信息。</p>
+<hr />
+<h4 id="urlopen_2">用urlopen()函数传递更多参数</h4>
+<p>首先回顾urlopen()的API定义：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># urlopen()函数的API</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">timeout</span><span class="p">,]</span><span class="o">*</span><span class="p">,</span> <span class="n">cafile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">capath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cadefault</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></p>
+<ul>
+<li><b>data参数</b><br>
+  data参数是<strong>可选的</strong>，默认情况下其值为None，如果为其赋值，则urlopen默认采用POST方式请求，也就是向服务器请求提交表单数据。举一实例如下：
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">parse</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># urlencode将键值对转化为字符串，bytes()函数将字符串转化为字节流</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span>    <span class="p">({</span><span class="s1">&#39;word&#39;</span><span class="p">:</span><span class="s1">&#39;hello&#39;</span><span class="p">}),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># 此处urlopen函数默认采用POST的方法</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http:// httpbin.org/post&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="sd">{</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="sd">  &quot;args&quot;: {}, </span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="sd">  &quot;data&quot;: &quot;&quot;, </span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="sd">  &quot;files&quot;: {}, </span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="sd">  &quot;form&quot;: {</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="sd">    &quot;word&quot;: &quot;hello&quot;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="sd">  }, </span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="sd">  &quot;headers&quot;: {</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="sd">    &quot;Accept-Encoding&quot;: &quot;identity&quot;, </span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="sd">    &quot;Content-Length&quot;: &quot;10&quot;, </span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="sd">    &quot;Content-Type&quot;: &quot;application/   x-www-form-urlencoded&quot;, </span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="sd">    &quot;Host&quot;: &quot;httpbin.org&quot;, </span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="sd">    &quot;User-Agent&quot;: &quot;Python-urllib/3.12&quot;, </span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="sd">    &quot;X-Amzn-Trace-Id&quot;:  &quot;Root=1-6780c418-7daa14d04d84250879f8d   3d4&quot;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="sd">  }, </span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="sd">  &quot;json&quot;: null, </span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="sd">  &quot;origin&quot;: &quot;27.149.23.110&quot;, </span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="sd">  &quot;url&quot;: &quot;http://httpbin.org/post&quot;</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="sd">}</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+    可以看到我们POST的参数与值出现在了form中</li>
+</ul>
+<ul>
+<li><b>timeout参数</b><br>
+  字面意思，timeout参数用于设置超时时间，单位为秒，默认为全局默认时间(socket._GLOBAL_DEFAULT_TIMEOUT)。它支持HTTP，HTTPS和FTP请求。下举一实例：
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://httpbin.org/get&#39;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># try except语句，先执行try内的语句，如果没出错，则执行else内语句（如果有的话），如果出错，则执行except。最后执行finally的语句（如果有的话）</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># 如果超时，那么通过error.URLError捕获异常，赋值给e</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># isinstance进行类型比较，判断异常是否是socket.timeout类型（超时）</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">):</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TIME OUT&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="sd">TIME OUT</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+    当然我们这里稍微“欺负”了一下服务器，大部分情况下，一个服务器都很难在0.1s内响应，除非坐在服务器上（）</li>
+</ul>
+<ul>
+<li><b>其他参数</b><br><ul>
+<li><b>context：</b>ssl.SSLContext类型，指定SSL设置。</li>
+<li><b>cafile：</b>指定CA证书，用于请求HTTPS链接</li>
+<li><b>capath：</b>指定CA证书路径，用于请求HTTPS链接</li>
+<li><b>cadefault：</b>已弃用，默认为False</li>
+</ul>
+</li>
+</ul>
+<p>更多信息，请<a href="https://docs.python.org/3/library/urllib.request.html">参阅此处</a></p>
+<h3 id="request">Request</h3>
+<p>简单的urlopen()函数有时候不能满足更复杂的请求需求，我们需要Request类的援助！</p>
+<p>我们先通过一个简单的实例来体会一下Request：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># request_1是一个Request类型的对象</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">request_1</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># urlopen操作的是对象而不是原先的url</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request_1</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</code></pre></div>
+<p>Request类的构造方法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{},</span><span class="n">origin_req_host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">unverifiable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</code></pre></div>
+<ul>
+<li><b>url参数：</b>必传参数</li>
+<li><b>data参数：</b>只接受字节流(bytes)类型</li>
+<li><b>headers参数：</b>请求头(Request Headers)，字典类型。最常用的用法是通过在headers中修改User-Agent来伪装浏览器</li>
+<li><b>origin_req_host参数：</b>请求方的host名称或者IP地址</li>
+<li><b>unverifiable参数：</b>请求是否无法验证，默认为False</li>
+<li><b>method参数：</b>字符串类型，指示请求的方法，比如GET、POST和PUT等，默认为GET</li>
+</ul>
+<p>下举一个实例来展示Request参数如何利用：</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">parse</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://httpbin.org/post&#39;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 需要向服务器post的数据</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="s1">&#39;password&#39;</span> <span class="p">:</span> <span class="s1">&#39;123456&#39;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># 用于伪装chrome的headers，顺带指出了host</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="s1">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="s1">&#39;origin_req_host&#39;</span> <span class="p">:</span> <span class="s1">&#39;httpbin.org&#39;</span>   
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># 转码</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="nb">dict</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c1"># 建立Request类的对象并调用</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="n">req</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1">#输出为</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="sd">{</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="sd">  &quot;args&quot;: {}, </span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="sd">  &quot;data&quot;: &quot;&quot;, </span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="sd">  &quot;files&quot;: {}, </span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="sd">  &quot;form&quot;: {</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="sd">    &quot;password&quot;: &quot;123456&quot;</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="sd">  }, </span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="sd">  &quot;headers&quot;: {</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="sd">    &quot;Accept-Encoding&quot;: &quot;identity&quot;, </span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="sd">    &quot;Content-Length&quot;: &quot;15&quot;, </span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="sd">    &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;, </span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="sd">    &quot;Host&quot;: &quot;httpbin.org&quot;, </span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="sd">    &quot;Origin-Req-Host&quot;: &quot;httpbin.org&quot;, </span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="sd">    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&quot;, </span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="sd">    &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-6780edef-4d476d9b114997e62daf1715&quot;</span>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="sd">  }, </span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="sd">  &quot;json&quot;: null, </span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="sd">  &quot;origin&quot;: &quot;112.49.107.93&quot;, </span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="sd">  &quot;url&quot;: &quot;http://httpbin.org/post&quot;</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="sd">}</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+可以看到我们成功设置了datas，headers和method。</p>
+<p>关于通过add_header添加headers：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">req</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">req</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">,</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="handleropener">高级用法——Handler和Opener</h3>
+<p>python在urllib.request中提供了一堆Handler来处理我们可能遇到的任何事情，比如通过登录验证，设置代理等等。</p>
+<p>python还在其中提供了OpenerDirector类，简称为Opener，先前的urlopen就是一个Opener。</p>
+<p>我们可以通过build_opener，以Handler为参数建立一个Opener，这个Opener可以通过open()来调用，返回类型和urlopen()一模一样。</p>
+<p>形象的解释是：Opener相当于一个工具箱，而每一个Handler都是一种特定的工具，这些工具有些需要我们实现进行“定制”使得它可以胜任要进行的工作，build_opener()负责将工具装入工具箱，提供给open()去完成对应的任务。</p>
+<p>下面举出几个具体的例子：</p>
+<ul>
+<li><b>验证登录</b><br>
+  有些网站在打开时候会提示输入用户名和密码进行验证，要请求这样的页面，需要借助HTTPBasicAuthHanlder。
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPBasicAuthHandler</span><span class="p">,</span> <span class="n">HTTPPasswordMgrWithDefaultRealm</span><span class="p">,</span> <span class="n">build_opener</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.error</span><span class="w"> </span><span class="kn">import</span> <span class="n">URLError</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># 设定我们的用户名与密码</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;Yangshu233&#39;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;123456&#39;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:5000/&#39;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># 实例化一个HHTTPPasswordMgrWithDefaultRealm对象，并通过add_password向其中添加指定url下的用户和密码</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="n">p</span> <span class="o">=</span> <span class="n">HTTPPasswordMgrWithDefaultRealm</span><span class="p">()</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="n">p</span><span class="o">.</span><span class="n">add_password</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="c1"># 以HTTPPasswordMgrWithDefaultRealm对象为参数，实例化一个HTTPBasicAuthHandler，这就是一个可以处理验证登录的Handler，并通过build_opener来build一个opener</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="n">auth_handler</span> <span class="o">=</span> <span class="n">HTTPBasicAuthHandler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="n">opener</span> <span class="o">=</span> <span class="n">build_opener</span><span class="p">(</span><span class="n">auth_handler</span><span class="p">)</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="c1"># 通过Opener来请求网址，处理验证</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="k">except</span> <span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<ul>
+<li><b>代理</b><br>
+  做爬虫时候要用到代理服务？考虑一下ProxyHandler吧！
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>  <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProxyHandler</span><span class="p">,</span> <span class="n">build_opener</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.error</span><span class="w"> </span><span class="kn">import</span> <span class="n">URLError</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  <span class="c1"># 实例化一个代理Handler</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  <span class="n">proxy</span> <span class="o">=</span> <span class="n">ProxyHandler</span><span class="p">({</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>      <span class="s1">&#39;http&#39;</span><span class="p">:</span> <span class="s1">&#39;http://203.19.38.114:1080&#39;</span><span class="p">,</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>      <span class="s1">&#39;https&#39;</span><span class="p">:</span> <span class="s1">&#39;https://123.123.123.123:8080&#39;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>  <span class="p">})</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>  <span class="c1"># 构建一个包含代理Handler的Opener</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  <span class="n">opener</span> <span class="o">=</span> <span class="n">build_opener</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>  <span class="n">url_1</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com&#39;</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>  <span class="n">url_2</span> <span class="o">=</span> <span class="s1">&#39;https://www.baidu.com&#39;</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>  <span class="c1"># 用Opener发起请求</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>  <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>      <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url_1</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>  <span class="k">except</span> <span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>  <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>      <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url_2</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>  <span class="k">except</span> <span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>      <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<ul>
+<li>
+<p><b>Cookies</b><br>
+  如何处理Cookies也是很重要的一环，我们可以借助相应的Handler来完成，举一实例如下：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.cookiejar</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.request</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.error</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com&#39;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 实例化一个CookierJar来存下Cookies</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">cookie</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">cookiejar</span><span class="o">.</span><span class="n">CookieJar</span><span class="p">()</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># HTTPCookieProcessor提供了如何接收Cookie的方法</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">handler</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookiejar</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="c1"># 遍历cookie中的键值并打印</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cookie</span><span class="p">:</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;=&#39;</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="c1"># 输出为：</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="sd">BAIDUID=F7E6BA151AD553B7443AEC5F52A7C0F7:FG=1</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="sd">BIDUPSID=F7E6BA151AD553B7C4468B6990F3AE47</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="sd">PSTM=1736572623</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="sd">BDSVRTM=1</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="sd">BD_HOME=1</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+  输出的内容就是我们得到的Cookies信息了，它记录了上一次我们和服务器之间的会话状态。</p>
+<p>当然，Cookies大多是以文件的形式保留的，我们是否也能将获得的Cookies保留为文件呢？</p>
+<p>显然我所说的不是直接将上面的输出用Python的文件处理方法来保存，而是使用http.cookiejar库中的MazillaCookierjar类来实现，下举一实例：</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.cookiejar</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.request</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.error</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com&#39;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># 设定一个要用到的文件名</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;cookies.txt&#39;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># 实例化一个MozillaCookieJar，传入文件名</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">cookie</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">cookiejar</span><span class="o">.</span><span class="n">MozillaCookieJar</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">handler</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">)</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>    <span class="c1"># 调用MozillaCookieJar继承父类FileCookieJar内的save</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="n">cookie</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">ignore_discard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_expires</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="c1"># 输出文件cookie.txt，内容为:</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="sd"># Netscape HTTP Cookie File</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="sd"># http://curl.haxx.se/rfc/cookie_spec.html</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="sd"># This is a generated file!  Do not edit.</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="sd">.baidu.com    TRUE    /   FALSE   1768110434  BAIDUID AEB83DAB7659350B81973D3E1836A7C5:FG=1</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="sd">.baidu.com    TRUE    /   FALSE   3884058081  BIDUPSID    AEB83DAB7659350B1F6AE8479DB6A802</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="sd">.baidu.com    TRUE    /   FALSE   3884058081  PSTM    1736574433</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="sd">www.baidu.com FALSE   /   FALSE       BDSVRTM 3</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="sd">www.baidu.com FALSE   /   FALSE       BD_HOME 1</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+如果采用保存为LWP格式的LWPCookieJar类，保存后的cookies文件生成格式会与Mozilla的相差甚远，但是内容都差不多。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">#LWP-Cookies-2.0</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Set</span><span class="o">-</span><span class="n">Cookie3</span><span class="p">:</span> <span class="n">BAIDUID</span><span class="o">=</span><span class="s2">&quot;0E5946AF9D27A483F82164879F9976F1:FG=1&quot;</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;.baidu.com&quot;</span><span class="p">;</span> <span class="n">path_spec</span><span class="p">;</span> <span class="n">domain_dot</span><span class="p">;</span> <span class="n">expires</span><span class="o">=</span><span class="s2">&quot;2026-01-11 06:06:17Z&quot;</span><span class="p">;</span> <span class="n">comment</span><span class="o">=</span><span class="n">bd</span><span class="p">;</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">Set</span><span class="o">-</span><span class="n">Cookie3</span><span class="p">:</span> <span class="n">BIDUPSID</span><span class="o">=</span><span class="mf">0E5946</span><span class="n">AF9D27A48334F7213F921CC5A8</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;.baidu.com&quot;</span><span class="p">;</span> <span class="n">path_spec</span><span class="p">;</span> <span class="n">domain_dot</span><span class="p">;</span> <span class="n">expires</span><span class="o">=</span><span class="s2">&quot;2093-01-29 09:20:24Z&quot;</span><span class="p">;</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">Set</span><span class="o">-</span><span class="n">Cookie3</span><span class="p">:</span> <span class="n">PSTM</span><span class="o">=</span><span class="mi">1736575576</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;.baidu.com&quot;</span><span class="p">;</span> <span class="n">path_spec</span><span class="p">;</span> <span class="n">domain_dot</span><span class="p">;</span> <span class="n">expires</span><span class="o">=</span><span class="s2">&quot;2093-01-29 09:20:24Z&quot;</span><span class="p">;</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">Set</span><span class="o">-</span><span class="n">Cookie3</span><span class="p">:</span> <span class="n">BDSVRTM</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;www.baidu.com&quot;</span><span class="p">;</span> <span class="n">path_spec</span><span class="p">;</span> <span class="n">discard</span><span class="p">;</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">Set</span><span class="o">-</span><span class="n">Cookie3</span><span class="p">:</span> <span class="n">BD_HOME</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;www.baidu.com&quot;</span><span class="p">;</span> <span class="n">path_spec</span><span class="p">;</span> <span class="n">discard</span><span class="p">;</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span>
+</code></pre></div>
+<p>那我们应该如何读取并利用我们得到的Cookies呢？</p>
+<p>答案是调用load()方法来读取本地已有的Cookies文件，加载到实例化的对象中。举一实例如下：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.cookiejar</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.request</span><span class="o">,</span><span class="w"> </span><span class="nn">urllib.error</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com&#39;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># 实例化一个空的MozillarCookieJar</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">cookie</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">cookiejar</span><span class="o">.</span><span class="n">MozillaCookieJar</span><span class="p">()</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># 加载当前目录下cookies.txt文件</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">cookie</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;cookies.txt&#39;</span><span class="p">,</span> <span class="n">ignore_discard</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_expires</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="n">handler</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">)</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+</code></pre></div>
+这样子我们就可以将获取到的Cookies用到请求里啦！</p>
+</li>
+</ul>
+<h2 id="urlliberror">使用urllib处理异常——error模块</h2>
+<h3 id="error">error模块介绍</h3>
+<p>上一节主要讲了如何请求，但是如果网络不好或者出现了什么问题，请求失败出现了异常，该怎么办呢？</p>
+<p>urllib的error模块定义了由request模块产生的异常，也就是说，如果request模块内的类或者方法发生了错误，就会“抛出”定义在error内的异常。</p>
+<p>利用error模块来捕获这些异常并正确处理可以帮助我们避免程序因为报错而停止运行。</p>
+<h3 id="urlerror">URLError类</h3>
+<p>URLError类继承自OSError类，有request模块产生的异常都可以通过捕获这个类来处理。</p>
+<p>URLError类的定义如下：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">URLError</span><span class="p">(</span><span class="n">reason</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div></p>
+<p>其带有reason的属性，可以返回错误原因。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://omg.com/index.html&#39;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&#39;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">req</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="sd">Not Fonud</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>如果实例中未通过Request类模拟浏览器行为，则输出为Forbidden。</p>
+<p>通过URLError，我们轻松处理可能遇到的问题，防止程序的意外终止。</p>
+<h3 id="httperror">HTTPError类</h3>
+<p>HTTPError类是URLError类的子类，专门用于处理HTPP请求错误，</p>
+<p>HTTPError类定义如下</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">HTTPError</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+</code></pre></div>
+<p>HTTPError有三个属性：</p>
+<ul>
+<li><b>code：</b>返回HTTP状态码，比如404,200等</li>
+<li><b>reason：</b>返回错误原因</li>
+<li><b>headers：</b>返回请求头</li>
+</ul>
+<p>下举一实例来说明HTTPError用法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com/111.html&#39;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&#39;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="p">}</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">req</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Request Successfully&#39;</span><span class="p">)</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="sd">Not Found</span>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="sd">404</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="sd">Content-Length: 206</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="sd">Content-Type: text/html; charset=iso-8859-1</span>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="sd">Date: Sat, 11 Jan 2025 07:44:08 GMT</span>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="sd">Server: Apache</span>
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="sd">Connection: close</span>
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>注意到以上代码我先尝试捕获子类错误，然后再尝试捕获父类错误，如果一切正常则执行else块内的代码，这是一个较好的捕获错误的代码。</p>
+<p>我们可以看到，借助HTTPerror类可以更详细获得错误信息。</p>
+<p>请注意，有时候抛出的错误可能不是字符串，而是一个对象，比如下面这个实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 返回的error是对象</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.deepseek.com&#39;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="k">except</span> <span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">))</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">):</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time Out&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="sd">&lt;class &#39;TimeoutError&#39;&gt;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="sd">Time Out</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>可见返回的是一个TimeoutError类的错误，socket.timeout继承自TimeoutError类</p>
+<h2 id="urllibparse">使用urllib解析链接——parse模块</h2>
+<p>urllib库内提供的parse模块有很多实用的功能，包括了定义处理URL的标准接口，实现URL各部分的抽取、合并与连接转换，同时它还支持很多协议下的URL处理。</p>
+<h3 id="urlparse">urlparse()</h3>
+<p>urlparse()的定义如下</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">allow_fragments</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>该方法可以实现URL的识别和分段：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">result</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com/index.html;user?id=5#comment&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="sd">&lt;class &#39;urllib.parse.ParseResult&#39;&gt;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="sd">ParseResult(scheme=&#39;https&#39;, netloc=&#39;www.baidu.com&#39;, path=&#39;/index.html&#39;, params=&#39;user&#39;, query=&#39;id=5&#39;, fragment=&#39;comment&#39;)</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div></p>
+<p>我们能从输出中了解到什么？</p>
+<p>首先urlparse将我们提供的url拆成了6个部分，分别是：
++ <b>scheme：</b>协议
++ <b>netloc：</b>域名
++ <b>path：</b>访问路径
++ <b>params：</b>参数
++ <b>query：</b>查询条件，一般用在"GET"类型的URL中
++ <b>fragment：</b>锚点，用于定位页面内部下拉位置</p>
+<p>总的来说，一个标准的url链接模式应该是：</p>
+<blockquote>
+<p><mark>scheme://netloc/path;params?query#fragment</mark></p>
+</blockquote>
+<p>而urlparse()可以根据以上规则来拆分每一个标准的URL</p>
+<p>从urlparse()的定义中，可以看到它有三个参数：</p>
+<ul>
+<li><b>url：</b>必填项，待解析的URL</li>
+<li><b>scheme：</b>默认协议，可以在URL不携带协议的情况下指定协议类型，如果URL已经携带了协议，则返回URL中的协议类型<br>
+  举一实例如下：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">url_1</span> <span class="o">=</span> <span class="s1">&#39;www.baidu.com/index.html;user?id=5#comment&#39;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">url_2</span> <span class="o">=</span> <span class="s1">&#39;https://www.baidu.com/index.html;user?id=5#comment&#39;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="n">result_1</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url_1</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;http&#39;</span><span class="p">)</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="n">result_2</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url_2</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;http&#39;</span><span class="p">)</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">result_1</span><span class="p">)</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">result_2</span><span class="p">)</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="sd">ParseResult(scheme=&#39;http&#39;, netloc=&#39;&#39;, path=&#39;www.baidu.com/index.html&#39;, params=&#39;user&#39;, query=&#39;id=5&#39;, fragment=&#39;comment&#39;)</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="sd">ParseResult(scheme=&#39;https&#39;, netloc=&#39;www.baidu.com&#39;, path=&#39;/index.html&#39;, params=&#39;user&#39;, query=&#39;id=5&#39;, fragment=&#39;comment&#39;)</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="c1"># 未指明协议时urlparse()返回规定的默认协议，已经存在协议的则按照实际协议为准</span>
+</code></pre></div></li>
+<li><b>allow_fragments：</b>即是否忽略fragment，如果被设置为False，那么fragment部分就会被解析为path、parameters或者query的一部分，而解析出的fragment为空。<br>
+  下举一实例：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.baidu.com/index.html;user?id=5#comment&#39;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="n">result</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_fragments</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="sd">ParseResult(scheme=&#39;https&#39;, netloc=&#39;www.baidu.com&#39;, path=&#39;/index.html&#39;, params=&#39;user&#39;, query=&#39;id=5#comment&#39;, fragment=&#39;&#39;)</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="c1"># 原先fragment的部分被并入了query内</span>
+</code></pre></div>
+  当然如果原先的url内不包含params和query，fragment就会被并入path内</li>
+</ul>
+<p>观察返回的ParseResult类，可以发现其实际上是一个python的元组，这意味着我们实际上可以通过索引下标，属性两种方式来读取，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.baidu.com/index.html;user?id=5#comment&#39;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="n">result</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="o">.</span><span class="n">scheme</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="o">.</span><span class="n">netloc</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="sd">https</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="sd">https</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="sd">www.baidu.com</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="sd">www.baidu.com</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h3 id="urlunparse">urlunparse()</h3>
+<p>urlunparse()是urlparse()的对立方法，其接受一个长度为6的可迭代对象，比如列表，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="s1">&#39;www.baidu.com&#39;</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;id=5&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlunparse</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="sd">https://www.baidu.com/index.html;user?id=5</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h3 id="urlsplit">urlsplit()</h3>
+<p>urlsplit()类似于urlparse()，只不过其不再单独解析params这一部分，而是将其合并至前一个元素中。</p>
+<h3 id="urlunsplit">urlunsplit()</h3>
+<p>urlunsplit()类似于前文的urlunparas()，只不过其参数长度为5</p>
+<h3 id="urljoin">urljoin()</h3>
+<p>前面提到的urlparse()和urlsplit()都是生成新链接的方法，而urljoin()则是在旧链接基础上生成新链接的方法。</p>
+<p>urljoin()接收两个参数，前一个参数作为base_url，第二参数是新链，urljoin()会将base_url的scheme、netloc和path与新链做对比，如果新链缺失，则用base_url的部分进行补充，而base_url中的params、query和fragment是不起作用的。</p>
+<p>下举一实例：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">,</span> <span class="s1">&#39;FAQ.html&#39;</span><span class="p">))</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">,</span> <span class="s1">&#39;http://cuiqingcai.com/FAQ.html&#39;</span><span class="p">))</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com/index.html;user?id=5#comment&#39;</span><span class="p">,</span> <span class="s1">&#39;FAQ.html&#39;</span><span class="p">))</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="sd">http://www.baidu.com/FAQ.html</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="sd">http://cuiqingcai.com/FAQ.html</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="sd">http://www.baidu.com/FAQ.html</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div></p>
+<h3 id="urlencode">urlencode()</h3>
+<p>urlencode()可以很方便地将字典类型转化为URL的GET请求参数，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlencode</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com?&#39;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">GET_params</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;18&#39;</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="p">}</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="n">url</span> <span class="o">=</span>  <span class="n">base_url</span> <span class="o">+</span> <span class="n">urlencode</span><span class="p">(</span><span class="n">GET_params</span><span class="p">)</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="sd">http://www.baidu.com?name=Harry&amp;age=18</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h3 id="parse_qsparse_qsl">parse_qs()，parse_qsl()</h3>
+<p>parse_qs()，parse_qsl()与urlencode()方法相反，可以将序列化的GET请求参数转化为非序列化的类型，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_qs</span><span class="p">,</span> <span class="n">parse_qsl</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;name=Harry&amp;age=18&#39;</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse_qs</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">parse_qsl</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="sd">{&#39;name&#39;: [&#39;Harry&#39;], &#39;age&#39;: [&#39;18&#39;]}</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="sd">[(&#39;name&#39;, &#39;Harry&#39;), (&#39;age&#39;, &#39;18&#39;)]</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>可见parse_qs()返回的是一个字典类型，而parse_qsl()返回一个元组类型。</p>
+<h3 id="quote">quote()</h3>
+<p>如果URL中需要带有中文参数，而向服务器无法直接提交带有中文的URL，此时使用quote()可以将中文字符转化为URL编码，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com/s?wd=&#39;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">keyword</span> <span class="o">=</span> <span class="s1">&#39;中文&#39;</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="sd">http://www.baidu.com/s?wd=%E4%B8%AD%E6%96%87</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h3 id="unquote">unquote()</h3>
+<p>方法如其名，unquote()可以对URL进行解码，下举一实例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">unquote</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.baidu.com/s?wd=</span><span class="si">%E</span><span class="s1">4%B8%AD</span><span class="si">%E</span><span class="s1">6</span><span class="si">%96%</span><span class="s1">87&#39;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="sd">http://www.baidu.com/s?wd=中文</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h2 id="robots">分析Robots协议</h2>
+<p>利用urllib提供的robotparser模块，我们可以分析网站Robots协议。</p>
+<h3 id="robots_1">Robots协议介绍</h3>
+<p>网络爬虫作为一种实用工具，可以在很多场景下运用，但如果对其使用不当，可能会徒增服务器压力，造成信息泄露或者其他严重后果。为了向网络爬虫表明这个服务器的爬取规则，产生了Robots协议，也称为网络爬虫排除标准。这个协议通常被记录在网站根目录下的robots.txt文件里。</p>
+<p>一个“遵纪守法”的爬虫在访问一个站点的时候，它首先应该检查站点根目录下的robots.txt文件，如果存在，则爬虫会根据其中的规则定义的爬取范围来找，如果没有，爬虫则会爬取所有能访问的网页。</p>
+<p>一个robotrs.txt通常由三部分组成：
++ <b>User-agent：</b>规则使用的爬虫名称，如果对所有爬虫生效，则为"*"
++ <b>Disallow：</b>禁止访问的目录，如果全部禁止则为"/"
++ <b>Allow：</b>允许访问的目录，一般不单独使用，和Disallow一同使用</p>
+<p>以下是一些常见的robots.txt写法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># 禁止所有爬虫访问</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="sd">User-agent: *</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="sd">Disallow: /</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="c1"># 允许所有爬虫访问</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="sd">User-agent: *</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="sd">Disallow: </span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="c1"># 只允许访问某个目录</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a><span class="sd">Use-agent: *</span>
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a><span class="sd">Disallow: /</span>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="sd">Allow: /temp/</span>
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a><span class="c1"># 禁止访问某些目录</span>
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a><span class="sd">Use-agent: *</span>
+<a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a><span class="sd">Disallow: /private/</span>
+<a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a><span class="sd">Allow: /temp/</span>
+<a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>
+<a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a><span class="c1"># 只允许某个爬虫访问某个目录</span>
+<a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a><span class="sd">Use-agent: WebSpider</span>
+<a id="__codelineno-33-30" name="__codelineno-33-30" href="#__codelineno-33-30"></a><span class="sd">Disallow: /</span>
+<a id="__codelineno-33-31" name="__codelineno-33-31" href="#__codelineno-33-31"></a><span class="sd">Allow: /temp/</span>
+<a id="__codelineno-33-32" name="__codelineno-33-32" href="#__codelineno-33-32"></a><span class="sd">User-agent: *</span>
+<a id="__codelineno-33-33" name="__codelineno-33-33" href="#__codelineno-33-33"></a><span class="sd">Disallow: /</span>
+<a id="__codelineno-33-34" name="__codelineno-33-34" href="#__codelineno-33-34"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<h3 id="_1">爬虫名称</h3>
+<p>很多著名的爬虫程序都是有自己的“名字”的，比如百度的是BaiduSpider，Google是Googlebot，360搜索是360Spider。</p>
+<h3 id="robotparser">robotparser</h3>
+<p>robotparser提供了一个类RobotFileParser，它可以根据网站提供的robots.txt文件来判断爬取爬虫是否有权限来爬取这个网页。</p>
+<p>类RobotFileParser的定义是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">RobotFileParser</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>其中常见的方法是：
++ <b>set_url()：</b>用来设置robots.txt的url
++ <b>read()：</b>读取文件并分析，但是不返回任何值，可以理解为初始化
++ <b>parse()：</b>解析robots.txt某些行的文件
++ <b>can_fetch()：</b>传入User-agent与url两个参数，判断是否可以抓取，返回布尔值
++ <b>mtime：</b>返回上次抓取和分析robots.txt的时间
++ <b>modified：</b>设置抓取和分析robots.txt文件的时间</p>
+<p>下举一实例展现其用法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">robotparser</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.jianshu.com/robots.txt&#39;</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1"># RobotFileParser内直接提供了set_url方法进行初始化，此处直接传入</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="n">robotfile</span> <span class="o">=</span> <span class="n">robotparser</span><span class="o">.</span><span class="n">RobotFileParser</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="n">robotfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">robotfile</span><span class="o">.</span><span class="n">can_fetch</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.jianshu.com/p/b67554025d7d&#39;</span><span class="p">))</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">robotfile</span><span class="o">.</span><span class="n">can_fetch</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.jianshu.com//search?q=python&amp;page=l&amp;type=collections&#39;</span><span class="p">))</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="c1"># 输出为</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="sd">False</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="sd">False</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>当然使用parse()方法也可以实现：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">robotfile</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://www.jianshu.com/robots.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;htf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
