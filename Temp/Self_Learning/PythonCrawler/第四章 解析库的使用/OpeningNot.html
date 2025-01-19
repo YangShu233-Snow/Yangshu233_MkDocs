@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-header__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+    <a href="../../../.." title="杨树の宝藏小屋" class="md-header__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -168,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../index.html" title="杨树の宝藏小屋" class="md-nav__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
+    <a href="../../../.." title="杨树の宝藏小屋" class="md-nav__button md-logo" aria-label="杨树の宝藏小屋" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -186,11 +191,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../index.html" class="md-nav__link">
+      <a href="../../../../HomePage.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Home
+    首页
   </span>
   
 
@@ -513,6 +518,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="OpeningNot.html" class="md-nav__link md-nav__link--active">
         
@@ -541,6 +548,27 @@
   
   <span class="md-ellipsis">
     XPath与lxml库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Temp/Self_Learning/PythonCrawler/第四章 解析库的使用/BeautifulSoup.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BeautifulSoup库
   </span>
   
 
@@ -928,6 +956,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -942,9 +972,13 @@
                   
 
 
-  <h1>写在前头</h1>
-
-
+<h1 id="_1">写在前头</h1>
+<p>经过一段时间的学习，我们写出了一个爬虫实战案例，在具体实践我们发现，利用正则表达式来提取对应片段显得十分的不方便。</p>
+<p>首先是正则表达式的匹配相对而言“过于严格”，很多时候不是匹配到太多东西，而是根本匹配不到东西，可能仅仅只是一些小小的纰漏而已。</p>
+<p>其次正则表达式也不易阅读，如果其中出错了很难检查，也很难修改。</p>
+<p>对于HTML语言来说，它是一种标记语言，各个部分都有一个标记其性质的标签<code>&lt; &gt;</code>，标签中还会有很多属性与名称等信息，我们自然想到，能不能依照这个特点对HTML进行解析和提取？</p>
+<p>很幸运的是，现在Python已经有了很多功能强大的解析库支持对HTML依照标签的提取，大多数都是通过<b>XPath</b>和<b>CSS选择器</b>实现对HTML的解析的。</p>
+<p>本章节我们将详细地学习几个库的用法，包含了lxml、Beautiful Soup和pyquery。</p>
 
 
 
