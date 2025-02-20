@@ -108,43 +108,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -272,6 +235,15 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据统计
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       网站更新
     </span>
@@ -1242,6 +1214,15 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
+      数据统计
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
       网站更新
     </span>
   </a>
@@ -1264,6 +1245,29 @@
 
 
 <h1 id="welcome-to-my-mkdocs">Welcome to My MkDocs</h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+
+    <!-- 字数统计图标 -->
+    <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
+    </svg>
+    约 470 个字
+
+
+
+
+
+
+    <!-- 阅读时间图标 -->
+    <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 3px;" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+    </svg>
+    预计阅读时间 2 分钟
+
+
+
+</div>
+
 <p>欢迎来到，杨树の宝藏小屋！</p>
 <p>这里有我几乎所有的，自己写的Markdown笔记，一般会同步自己的学习进度进行更新的。</p>
 <p>在本页的最后你可以看到这个MkDocs上一次更新是什么时候！</p>
@@ -1308,8 +1312,22 @@
 <h2 id="_4">联系方式</h2>
 <p>欢迎通过Email联系我！</p>
 <p>Gmail：<code>gm.yangshu233@gmail.com</code> </p>
-<h2 id="_5">网站更新</h2>
+<h2 id="_5">数据统计</h2>
+<p style='font-size: 15px'><b>
+统计插件：<span style='background-color: lightgrey'>mkdocs_statistics_plugin</span>
+</b></p>
+
+<p>本站共有 25 个页面，41281 个字，1675 行代码，116 张图片。</p>
 <ul>
+<li>本站一共有<code>25</code>页，内容不够，分页来凑！</li>
+<li>本站总字数高达<code>41281</code>字，相当于一本《诗经》</li>
+<li>本站一共写有<code>1675</code>行代码，每天都在试图伪装成技术佬！</li>
+<li>本站一共有<code>116</code>张图片，用话说不明白的，还是画图吧……</li>
+</ul>
+<h2 id="_6">网站更新</h2>
+<ul>
+<li><b>添加了插件mkdocs_statistics_plugin，现在网站可以统计页面信息了</b><br><code>2025-02-20T21:10:00</code></li>
+<li><b>更新了第一篇普物笔记</b><br><code>2025-02-20T15:40:00</code> </li>
 <li><b>跟随其他账号，换一个favicon</b><br><code>2025-02-12T23:25:00</code></li>
 <li><b>更新有机化学自学第一章的笔记</b><br><code>2025-02-09T17:23:00</code></li>
 <li><b>更新XPath与lxml笔记</b><br><code>2025-01-19T13:35:00</code></li>
@@ -1323,6 +1341,9 @@
 
 
 
+
+  
+  
 
 
 
