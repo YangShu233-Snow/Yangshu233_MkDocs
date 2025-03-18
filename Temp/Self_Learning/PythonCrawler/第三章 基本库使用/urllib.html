@@ -1875,11 +1875,13 @@
 
 <h2 id="urllib">urllib类库介绍</h2>
 <p><a href="https://docs.python.org/3/library/urllib/html">urllib官方文档</a>，可供参考</p>
-<p>urllib库是Python内置的HTTP请求库，包含有：
-+ <b>request：</b>最基本的HTPP请求模块，用于<u>模拟发送请求</u>
-+ <b>error：</b>异常处理模块，用于<u>捕获异常</u>
-+ <b>parse：</b>工具模块，用于<u>URL的拆分解析和合并</u>
-+ <b>robotparse：</b>用于<u>识别网站的robots.txt文件</u></p>
+<p>urllib库是Python内置的HTTP请求库，包含有：</p>
+<ul>
+<li><b>request：</b>最基本的HTPP请求模块，用于<u>模拟发送请求</u></li>
+<li><b>error：</b>异常处理模块，用于<u>捕获异常</u></li>
+<li><b>parse：</b>工具模块，用于<u>URL的拆分解析和合并</u></li>
+<li><b>robotparse：</b>用于<u>识别网站的robots.txt文件</u></li>
+</ul>
 <h2 id="urllibrequest">使用urllib发送请求——request模块</h2>
 <p>如果我们要向一个服务器发送请求，可以使用urllib的<strong>request模块</strong>，以下有具体用法：</p>
 <h3 id="urlopen">urlopen()</h3>
@@ -1922,9 +1924,11 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">&lt;class &#39;http.client.HTTPResponse&#39;&gt;</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">&#39;&#39;&#39;</span>
 </code></pre></div>
-<p>可见其返回了一个<b>HTTPResponse类型</b>的对象，主要包含：
-+ read()、readinto()、getheader(name)、getheaders()、fileno()等方法
-+ msg、version、status、reason、debuglevel、closed等属性</p>
+<p>可见其返回了一个<b>HTTPResponse类型</b>的对象，主要包含：</p>
+<ul>
+<li>read()、readinto()、getheader(name)、getheaders()、fileno()等方法</li>
+<li>msg、version、status、reason、debuglevel、closed等属性</li>
+</ul>
 <p>在先前的示例中，将urlopen返回的对象赋值给了response，并通过read()方法得到了返回的网页内容</p>
 <p>再举一实例：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span>
@@ -2389,13 +2393,15 @@
 <a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="sd">&#39;&#39;&#39;</span>
 </code></pre></div></p>
 <p>我们能从输出中了解到什么？</p>
-<p>首先urlparse将我们提供的url拆成了6个部分，分别是：
-+ <b>scheme：</b>协议
-+ <b>netloc：</b>域名
-+ <b>path：</b>访问路径
-+ <b>params：</b>参数
-+ <b>query：</b>查询条件，一般用在"GET"类型的URL中
-+ <b>fragment：</b>锚点，用于定位页面内部下拉位置</p>
+<p>首先urlparse将我们提供的url拆成了6个部分，分别是：</p>
+<ul>
+<li><b>scheme：</b>协议</li>
+<li><b>netloc：</b>域名</li>
+<li><b>path：</b>访问路径</li>
+<li><b>params：</b>参数</li>
+<li><b>query：</b>查询条件，一般用在"GET"类型的URL中</li>
+<li><b>fragment：</b>锚点，用于定位页面内部下拉位置</li>
+</ul>
 <p>总的来说，一个标准的url链接模式应该是：</p>
 <blockquote>
 <p><mark>scheme://netloc/path;params?query#fragment</mark></p>
@@ -2606,13 +2612,15 @@
 <p>类RobotFileParser的定义是：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">RobotFileParser</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>其中常见的方法是：
-+ <b>set_url()：</b>用来设置robots.txt的url
-+ <b>read()：</b>读取文件并分析，但是不返回任何值，可以理解为初始化
-+ <b>parse()：</b>解析robots.txt某些行的文件
-+ <b>can_fetch()：</b>传入User-agent与url两个参数，判断是否可以抓取，返回布尔值
-+ <b>mtime：</b>返回上次抓取和分析robots.txt的时间
-+ <b>modified：</b>设置抓取和分析robots.txt文件的时间</p>
+<p>其中常见的方法是：</p>
+<ul>
+<li><b>set_url()：</b>用来设置robots.txt的url</li>
+<li><b>read()：</b>读取文件并分析，但是不返回任何值，可以理解为初始化</li>
+<li><b>parse()：</b>解析robots.txt某些行的文件</li>
+<li><b>can_fetch()：</b>传入User-agent与url两个参数，判断是否可以抓取，返回布尔值</li>
+<li><b>mtime：</b>返回上次抓取和分析robots.txt的时间</li>
+<li><b>modified：</b>设置抓取和分析robots.txt文件的时间</li>
+</ul>
 <p>下举一实例展现其用法：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">urllib</span><span class="w"> </span><span class="kn">import</span> <span class="n">robotparser</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
