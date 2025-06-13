@@ -607,6 +607,113 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bioinfomatics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bioinfomatics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    笔记
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Self_Learning/Bioinfomatics/notes/unix_shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    unix shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2126,10 +2233,12 @@ $$ \lim_{n \rightarrow +\infty}P\left{\left|\frac{1}{n}\sum^n_{i=1}X_i-c_n\right
 <p>大数定律的形象解释：当试验次数趋于无穷的时候，可以通过<b>频率估计概率</b>。</p>
 <p>对于具体的随机分布模式，大数定律还包括有不同的具体形式：</p>
 <ul>
-<li><b>伯努利大数定律：</b>设<span class="arithmatex">\(n_A\)</span>为<span class="arithmatex">\(n\)</span>重伯努利实验中的事件<span class="arithmatex">\(A\)</span>发生次数，<span class="arithmatex">\(p(0&lt;p&lt;1)\)</span>为事件<span class="arithmatex">\(A\)</span>在每次实验中发生的概率，即<span class="arithmatex">\(P(A)=p\)</span>，则对任意<span class="arithmatex">\(\varepsilon&gt;0\)</span>，有：
-  $$ \lim_{n\rightarrow +\infty}P\left{\left|\frac{n_A}{n}-p\right|\geq\varepsilon\right} = 0 $$</li>
-<li><b>辛钦大数定律：</b>设<span class="arithmatex">\(\{X_i,i\geq 1\}\)</span>为独立同分布的随机变量序列，且数学期望存在，记为<span class="arithmatex">\(\mu\)</span>，则对任意的<span class="arithmatex">\(\varepsilon&gt;0\)</span>，有：
-  $$ \lim_{n\rightarrow+\infty}P\left{\left|\frac{1}{n}\sum^n_{i=1}X_i-\mu\right|\geq\varepsilon\right}=0 $$</li>
+<li>
+<p><b>伯努利大数定律：</b>设<span class="arithmatex">\(n_A\)</span>为<span class="arithmatex">\(n\)</span>重伯努利实验中的事件<span class="arithmatex">\(A\)</span>发生次数，<span class="arithmatex">\(p(0&lt;p&lt;1)\)</span>为事件<span class="arithmatex">\(A\)</span>在每次实验中发生的概率，即<span class="arithmatex">\(P(A)=p\)</span>，则对任意<span class="arithmatex">\(\varepsilon&gt;0\)</span>，有：</p>
+<p>$$ \lim_{n\rightarrow +\infty}P\left{\left|\frac{n_A}{n}-p\right|\geq\varepsilon\right} = 0 $$
++ <b>辛钦大数定律：</b>设<span class="arithmatex">\(\{X_i,i\geq 1\}\)</span>为独立同分布的随机变量序列，且数学期望存在，记为<span class="arithmatex">\(\mu\)</span>，则对任意的<span class="arithmatex">\(\varepsilon&gt;0\)</span>，有：</p>
+<div class="arithmatex">\[ \lim_{n\rightarrow+\infty}P\left\{\left|\frac{1}{n}\sum^n_{i=1}X_i-\mu\right|\geq\varepsilon\right\}=0 \]</div>
+</li>
 </ul>
 <h2 id="52">5.2 中心极限定理</h2>
 <p>对于某些随机变量，其往往是由<b>大量且独立</b>因素的综合影响造成，其中单独因素的<b>作用很小</b>，所以这种随机变量往往<b>服从正态分布</b>。</p>
