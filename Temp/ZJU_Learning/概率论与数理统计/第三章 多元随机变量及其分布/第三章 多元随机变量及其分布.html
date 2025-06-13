@@ -2622,16 +2622,16 @@ f(x,y) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\frac{1}{2(1-\
 <p>值得注意的是，二维正态分布的两个边际分布都是一维正态分布，并且<b>不依赖参数<span class="arithmatex">\(\rho\)</span>。</b></p>
 <p>二维正态分布的条件概率分布也是……<b>一维正态分布！！！</b></p>
 <p>下面做一个条件分布的总结：</p>
-<p>条件分布函数：
-$$
+<p>条件分布函数：</p>
+<div class="arithmatex">\[
 \begin{aligned}
-  F_{X|Y}(x|y) &amp;= P(X\leq x|Y=y)\
+  F_{X|Y}(x|y) &amp;= P(X\leq x|Y=y)\\
   &amp;=\begin{cases}
-    对于离散: \displaystyle\frac{P(X\leq x, Y=y)}{P(Y=y)}, &amp; P(Y=y)&gt;0\
-    对于连续: \displaystyle\frac{\displaystyle\int_{-\infty}^x f(t,y)dt}{f_Y(y)}, &amp; f_Y(y)&gt;0\
+    对于离散: \displaystyle\frac{P(X\leq x, Y=y)}{P(Y=y)}, &amp; P(Y=y)&gt;0\\ 
+    对于连续: \displaystyle\frac{\displaystyle\int_{-\infty}^x f(t,y)dt}{f_Y(y)}, &amp; f_Y(y)&gt;0\\
   \end{cases}
 \end{aligned}
-$$</p>
+\]</div>
 <h3 id="336">3.3.6 随机变量的独立性</h3>
 <p>定义：设<span class="arithmatex">\(F(x,y)\)</span>及<span class="arithmatex">\(F_X(x)，F_(Y)\)</span>分别是二元随机变量<span class="arithmatex">\((X,Y)\)</span>的联合分布函数，及边际函数，若有：</p>
 <div class="arithmatex">\[
