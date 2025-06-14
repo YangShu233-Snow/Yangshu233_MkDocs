@@ -2389,7 +2389,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2467 个字
+    约 2706 个字
 
 
 
@@ -2400,7 +2400,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
     </svg>
-    预计阅读时间 8 分钟
+    预计阅读时间 9 分钟
 
 
 
@@ -2477,7 +2477,7 @@ f_{\chi^2}(x) = \begin{cases}
 <li>
 <p><b>分位数：</b>对于给定的正数<span class="arithmatex">\(\alpha，0&lt;\alpha&lt;1\)</span>，称满足条件</p>
 <div class="arithmatex">\[ P\{\chi^2&gt;\chi^2_\alpha(n)\}=\int^{+\infty}_{\chi^2_\alpha(n)}f_{\chi^2}(x){\rm d}x =\alpha \]</div>
-<p>的<span class="arithmatex">\(\chi^2_\alpha(n)\)</span>为<span class="arithmatex">\(\chi^2(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b></p>
+<p>的<span class="arithmatex">\(\chi^2_\alpha(n)\)</span>为<span class="arithmatex">\(\chi^2(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b>。</p>
 </li>
 </ul>
 <p>下举一个例题：</p>
@@ -2497,15 +2497,21 @@ f_{\chi^2}(x) = \begin{cases}
 据说这个公式是当时一个法国酿酒厂的工人发现的，由于怕自己提出的新理论打了学术界其他大牛的脸，遭到打击报复。他发表<span class="arithmatex">\(t\)</span>分布的论文署名是"student"。</p>
 <p>后来人们为了纪念他的低调，就将这个分布的字母<b>小写</b>了，这个分布也被称为<b>学生氏分布</b>。</p>
 </blockquote>
+<p><span class="arithmatex">\(t\)</span>分布的密度函数如下：</p>
+<div class="arithmatex">\[
+f_t(x) = \frac{\Gamma[(n+1)/2]}{\sqrt{\pi n}\Gamma\left(\frac{n}{2}\right)}\left(1+\frac{x^2}{n}\right)^{(-\frac{n+1}{2})},\quad -\infty&lt;x&lt;+\infty
+\]</div>
 <p><span class="arithmatex">\(t\)</span>分布有如下良好性质：</p>
 <ul>
 <li><b>对称性：</b><span class="arithmatex">\(t\)</span>分布的密度函数<span class="arithmatex">\(f_t(x)\)</span>是偶函数。（所以早期学术界经常认为其是正态分布）</li>
-<li><b>正态分布近似性：</b>由<span class="arithmatex">\(t\)</span>分布的密度函数可以得到，
-  $$ \lim_{n\rightarrow+\infty}f_t(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2} $$
-  即当<span class="arithmatex">\(n\)</span>足够大的时候，<span class="arithmatex">\(t\)</span>分布近似于标准正态分布<span class="arithmatex">\(n(0,1)\)</span>。</li>
-<li><b>分位数：</b>对于给定的正数<span class="arithmatex">\(\alpha，0&lt;\alpha&lt;1\)</span>，称满足条件
-  $$ P{t&gt;t_\alpha(n)} = \int^{+\infty}<em>{t</em>\alpha(n)}f_t(x){\rm d}x = \alpha $$
-  的<span class="arithmatex">\(t_\alpha(n)\)</span>为<span class="arithmatex">\(t(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b>。</li>
+<li>
+<p><b>正态分布近似性：</b>由<span class="arithmatex">\(t\)</span>分布的密度函数可以得到</p>
+<div class="arithmatex">\[ \lim_{n\rightarrow+\infty}f_t(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2} \]</div>
+<p>即当<span class="arithmatex">\(n\)</span>足够大的时候，<span class="arithmatex">\(t\)</span>分布近似于标准正态分布<span class="arithmatex">\(N(0,1)\)</span>。
++ <b>分位数：</b>对于给定的正数<span class="arithmatex">\(\alpha，0&lt;\alpha&lt;1\)</span>，称满足条件</p>
+<div class="arithmatex">\[ P\{t&gt;t_\alpha(n)\} = \int^{+\infty}_{t_\alpha(n)}f_t(x){\rm d}x = \alpha \]</div>
+<p>的<span class="arithmatex">\(t_\alpha(n)\)</span>为<span class="arithmatex">\(t(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b>。</p>
+</li>
 </ul>
 <h3 id="623-f">6.2.3 F分布</h3>
 <p>设<span class="arithmatex">\(X\sim\chi^2(n_1)，Y\sim\chi^2(n_2)\)</span>，且两者相互独立，则称随机变量</p>
@@ -2513,7 +2519,31 @@ f_{\chi^2}(x) = \begin{cases}
 F = \frac{X/n_1}{Y/n_2}
 \]</div>
 <p>服从<b>第一自由度为<span class="arithmatex">\(n_1\)</span></b>，<b>第二自由度为<span class="arithmatex">\(n_2\)</span></b>的<b><span class="arithmatex">\(F\)</span>分布</b>，记为<span class="arithmatex">\(F\sim F(n_1,n_2)\)</span>。</p>
+<p>其中，<span class="arithmatex">\(F(n_1, n_2)\)</span>分布的密度函数为：</p>
+<div class="arithmatex">\[
+f_F(x) = \begin{cases}
+  \displaystyle\frac{1}{B(n_1/2,n_2/2)}\left(\frac{n_1}{n_2}\right)^{n_1/2}x^{\frac{n_1}{2}-1}\left(1+\frac{n_1}{n_2}x\right)^{-\frac{n_1+n_2}{2}},&amp;&amp;x&gt;0\\
+  \\
+  0,&amp;&amp;其他
+\end{cases}
+\]</div>
+<p>其中，<span class="arithmatex">\(B(n_1/2,n_2/2)\)</span>为贝塔函数。定义为：</p>
+<div class="arithmatex">\[
+B(n_1/2,n_2/2) = \int^1_0 t^{n_1/2-1}(1-t)^{n_2/2-1}{\rm d}t = \frac{\Gamma(n_1/2)\Gamma(n_2/2)}{\Gamma((n_1+n_2)/2)}
+\]</div>
 <p><span class="arithmatex">\(F\)</span>分布有如下良好的性质：</p>
+<ul>
+<li>若<span class="arithmatex">\(F\sim F(n_1, n_2)\)</span>，则<span class="arithmatex">\(\displaystyle\frac{1}{F}\sim F(n_2, n_1)\)</span>。</li>
+<li>若<span class="arithmatex">\(X\sim t(n)\)</span>，则<span class="arithmatex">\(X^2\sim F(1, n)\)</span></li>
+<li>
+<p><span class="arithmatex">\(F\)</span>分布分位数。对于给定正数<span class="arithmatex">\(\alpha, 0&lt;\alpha&lt;1\)</span>，称满足条件</p>
+<div class="arithmatex">\[ P\{F&gt;F_\alpha(n_1, n_2)\} = \int^{+\infty}_{F_\alpha(n_1, n_2)}f_F(x){\rm d}x = \alpha \]</div>
+<p>的<span class="arithmatex">\(F_\alpha(n_1, n_2)\)</span>为<span class="arithmatex">\(F(n_1, n_2)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b>。</p>
+</li>
+</ul>
+<ul>
+<li>可以证明，$\displaystyle F_{1-\alpha}(n_1, n_2) = \frac{1}{F_\alpha(n_2, n_1)} $</li>
+</ul>
 <h2 id="63">6.3 正态总体的抽样分布</h2>
 <p>正态总体的各个统计量都有很良好的性质，我们在下面逐个介绍：</p>
 <h3 id="631">6.3.1 正态总体抽样的样本均值</h3>
