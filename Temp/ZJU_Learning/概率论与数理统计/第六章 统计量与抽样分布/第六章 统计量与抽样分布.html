@@ -2389,7 +2389,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2706 个字
+    约 2732 个字
 
 
 
@@ -2545,7 +2545,7 @@ B(n_1/2,n_2/2) = \int^1_0 t^{n_1/2-1}(1-t)^{n_2/2-1}{\rm d}t = \frac{\Gamma(n_1/
 <li>可以证明， $\displaystyle F_{1-\alpha}(n_1, n_2) = \frac{1}{F_\alpha(n_2, n_1)} $</li>
 </ul>
 <h2 id="63">6.3 正态总体的抽样分布</h2>
-<p>正态总体的各个统计量都有很良好的性质，我们在下面逐个介绍：</p>
+<p>正态总体的各个统计量都有很良好的性质，它们是参数估计和假设检验的理论基础，我们在下面逐个介绍：</p>
 <h3 id="631">6.3.1 正态总体抽样的样本均值</h3>
 <p>设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为来自正态总体<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>的简单随机样本，<span class="arithmatex">\(\overline{X}\)</span>是样本均值，则有：</p>
 <div class="arithmatex">\[
@@ -2580,13 +2580,17 @@ B(n_1/2,n_2/2) = \int^1_0 t^{n_1/2-1}(1-t)^{n_2/2-1}{\rm d}t = \frac{\Gamma(n_1/
 <p>在使用样本方差估计总体的时候，我们采用的是<span class="arithmatex">\(t\)</span>分布而不是正态分布。</p>
 <p>当然如果我们的样本足够大，自由度<span class="arithmatex">\(n-1\)</span>也就足够大，我们做的分布估计也就越接近与总体的正态分布，这和我们统计中以样本估计总体的思路是相同的。</p>
 <h3 id="634">6.3.4 两个正态总体抽样的样本均值与方差</h3>
-<p>设<span class="arithmatex">\(X_1,X_2,\cdot,X_n1\)</span>和<span class="arithmatex">\(Y_1,Y_2,\cdots,Y_n2\)</span>分别为来自正态总体<span class="arithmatex">\(N(\mu_1,\sigma^2_1)\)</span>和<span class="arithmatex">\(N(\mu_2,\sigma^2_2)\)</span>的简单随机样本，<span class="arithmatex">\(\overline{X}\)</span>和<span class="arithmatex">\(\overline{Y}\)</span>分别为样本均值，<span class="arithmatex">\(S^2_1\)</span>和<span class="arithmatex">\(S^2_2\)</span>分别为样本方差，则有：</p>
+<p>设<span class="arithmatex">\(X_1,X_2,\cdot,X_{n_1}\)</span>和<span class="arithmatex">\(Y_1,Y_2,\cdots,Y_{n_2}\)</span>分别为来自正态总体<span class="arithmatex">\(N(\mu_1,\sigma^2_1)\)</span>和<span class="arithmatex">\(N(\mu_2,\sigma^2_2)\)</span>的简单随机样本，<span class="arithmatex">\(\overline{X}\)</span>和<span class="arithmatex">\(\overline{Y}\)</span>分别为样本均值，<span class="arithmatex">\(S^2_1\)</span>和<span class="arithmatex">\(S^2_2\)</span>分别为样本方差，则有：</p>
 <div class="arithmatex">\[
 \frac{S^2_1/\sigma_1^2}{S^2_2/\sigma_2^2}\sim F(n_1-1,n_2-1)
 \]</div>
 <p>特别地，当<span class="arithmatex">\(\sigma_1^2 = \sigma_2^2 = \sigma^2\)</span>时，</p>
 <div class="arithmatex">\[
-U = \frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sigma\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim N(0,1)
+\frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1 + n_2 -2)
+\]</div>
+<p>其中，</p>
+<div class="arithmatex">\[
+S_w^2 = \frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2},\quad S_w = \sqrt{S_w^2}
 \]</div>
 <p>证明如下：</p>
 <p>由<span class="arithmatex">\(\chi^2\)</span>分布的可加性，得：</p>
@@ -2596,10 +2600,6 @@ V = \frac{(n-1)S^2_1}{\sigma^2_1} + \frac{(n-1)S^2_2}{\sigma^2_2} \sim \chi^2(n_
 <p>所以我们有，</p>
 <div class="arithmatex">\[
 \frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} = \frac{U}{\sqrt{V/(n_1+n_2-2)}} \sim t(n_1+n_2-2)
-\]</div>
-<p>其中，</p>
-<div class="arithmatex">\[
-S_w = \pm\sqrt{\frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2}}
 \]</div>
 <h3 id="635">6.3.5 例题</h3>
 <p>设<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，其中<span class="arithmatex">\((X_2,X_2,\cdots,X_n)\)</span>是一样本，求<span class="arithmatex">\(E(S^2)，Var(S^2)，Var(\overline{X}S^2)\)</span>。</p>
