@@ -2491,7 +2491,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2064 个字
+    约 2217 个字
 
 
 
@@ -2561,7 +2561,7 @@ F(x,y) = P(X\leq x,Y\leq y)
     F_Y(y) &amp;= F(+\infty,y)
 \end{aligned}
 \]</div>
-<p>特别要注意的是，在实际的问题当中，对某一变量，求其边际分布函数，必须要保证另一变量要趋于无穷，也就是保证<b>求和完全</b></p>
+<p>特别要注意的是，在实际的问题当中，对某一变量，求其边际分布函数，必须要保证另一变量要趋于无穷，也就是保证<b>求和完全</b>。</p>
 <h3 id="323">3.2.3 条件分布函数</h3>
 <p>对于二元随机变量<span class="arithmatex">\((X, Y)\)</span>，其条件分布函数为：</p>
 <div class="arithmatex">\[
@@ -2581,10 +2581,12 @@ F(x,y) = \int^y_{-\infty}\int^x_{-\infty}f(u,v)dudv
 f(x,y) = \frac{\partial^2F(x,y)}{\partial x\partial y}
 \]</div>
 <blockquote>
-<p><font size=4><b>联合密度函数性质</b></font><br>
-+ <b>非负性：</b> <span class="arithmatex">\(f(x,y)\geq 0\)</span>
-+ <b>归一性：</b> <span class="arithmatex">\(\displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=1\)</span>
-+ 设<span class="arithmatex">\(D\)</span>是xoy平面上的区域，点<span class="arithmatex">\((X,Y)\)</span>落在<span class="arithmatex">\(D\)</span>内的概率为：<span class="arithmatex">\(P((X,Y)\in D)=\displaystyle\underset{D}{\int\int}f(x,y)dxdy\)</span></p>
+<p><font size=4><b>联合密度函数性质</b></font><br></p>
+<ul>
+<li><b>非负性：</b> <span class="arithmatex">\(f(x,y)\geq 0\)</span></li>
+<li><b>归一性：</b> <span class="arithmatex">\(\displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=1\)</span></li>
+<li>设<span class="arithmatex">\(D\)</span>是xoy平面上的区域，点<span class="arithmatex">\((X,Y)\)</span>落在<span class="arithmatex">\(D\)</span>内的概率为：<span class="arithmatex">\(P((X,Y)\in D)=\displaystyle\underset{D}{\int\int}f(x,y)dxdy\)</span></li>
+</ul>
 </blockquote>
 <p><img src='./images/第三章 多元随机变量及其分布-配图-1.png' width=400></p>
 <p>积分该密度函数，先画图，再确定先积什么变量，将二重积分转化为两步积分。</p>
@@ -2615,8 +2617,10 @@ f(x,y) = \frac{\partial^2F(x,y)}{\partial x\partial y}
 <h3 id="333">3.3.3 条件概率密度</h3>
 <p>对于二元随机变量<span class="arithmatex">\((X,Y)\)</span>，其条件概率密度函数为：</p>
 <div class="arithmatex">\[
-f_{X|Y}(x|y) = \frac{f(x,y)}{f_Y(y)}\\
-f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)}
+\begin{aligned}
+  f_{X|Y}(x|y) &amp;= \frac{f(x,y)}{f_Y(y)}\\
+  f_{Y|X}(y|x) &amp;= \frac{f(x,y)}{f_X(x)}
+\end{aligned}
 \]</div>
 <h3 id="334">3.3.4 二元均匀分布</h3>
 <p>定义，若二元随机变量<span class="arithmatex">\((X,Y)\)</span>的联合概率密度函数为：</p>
@@ -2661,10 +2665,16 @@ F(x,y) = F_X(x)F_Y(y)
 <p>则称<span class="arithmatex">\((X,Y)\)</span>是<b>独立的</b>。</p>
 <p>同样有其等价形式：</p>
 <ul>
-<li>对于<b>离散型</b>：独立性等价于
-  <span class="arithmatex">\(<span class="arithmatex">\(p_{ij} = p_ip_j\)</span>\)</span></li>
-<li>对于<b>连续型</b>：独立性等价于在平面上非零处，处处成立
-  <span class="arithmatex">\(<span class="arithmatex">\(f(x,y) = f_X(x)f_Y(y)\)</span>\)</span></li>
+<li>
+<p>对于<b>离散型</b>：独立性等价于:</p>
+<div class="arithmatex">\[p_{ij} = p_ip_j\]</div>
+</li>
+</ul>
+<ul>
+<li>
+<p>对于<b>连续型</b>：独立性等价于在平面上非零处，处处成立:</p>
+<div class="arithmatex">\[f(x,y) = f_X(x)f_Y(y)\]</div>
+</li>
 </ul>
 <h3 id="337">3.3.7 多元随机变量函数的分布</h3>
 <p>我们将上面的概念拓展，使用多元的变量来研究一个概率问题。</p>
@@ -2684,8 +2694,8 @@ F(x,y) = F_X(x)F_Y(y)
 \begin{aligned}
   &amp;\begin{aligned}
   F_Z(z) &amp;= P(Z \leq z)\\
-  &amp;= P(X_Y \leq z)\\
-  &amp;= \underset{x-y \leq z}{\int\int}f(x,y){\rm d}x{\rm d}y\\
+  &amp;= P(g(X, Y) \leq z)\\
+  &amp;= \underset{g(X, Y) \leq z}{\int\int}f(x,y){\rm d}x{\rm d}y\\
 \end{aligned}\\
 &amp;\begin{aligned}
   f_Z(z) = \left(F_Z(z)\right)'
@@ -2717,8 +2727,9 @@ F(x,y) = F_X(x)F_Y(y)
 <div class="arithmatex">\[
 f_Z(z) = \int^{+\infty}_{-\infty}f_X(x)f_Y(z-x){\rm d}x
 \]</div>
-<p>对于泊松分布：</p>
-<p>对于正态分布：</p>
+<p>对于泊松分布，可以证明，<b>n个相互独立的服从泊松分布的随机变量的和依旧服从泊松分布，其参数为n个分布的参数之和</b>，即<span class="arithmatex">\(\displaystyle Z\sim P(\sum^n_{i=1}\lambda_i)\)</span>。</p>
+<p>对于正态分布，可以证明，<b>n个相互独立的服从正态分布的随机变量的和依旧服从正态分布</b>，且若<span class="arithmatex">\(X_i\sim N(\mu_i, \sigma^2_i)\)</span>，那么有<span class="arithmatex">\(\displaystyle Z\sim N\left(\sum^n_{i=1}\mu_i, \sum^n_{i=1}\sigma^2_i\right)\)</span>。</p>
+<p>进一步可以证明，<b>n个服从正态分布的随机变量的线性组合仍然服从正态分布</b>。</p>
 <h3 id="342-maxmin">3.4.2 max与min函数的分布</h3>
 <p>设<span class="arithmatex">\(X, Y\)</span>是两个<strong>互相独立</strong>的随机变量,他们的分布函数分别为<span class="arithmatex">\(F_X(x)\)</span>和<span class="arithmatex">\(F_Y(y)\)</span>，求<span class="arithmatex">\(M=max(X, Y)\)</span>和<span class="arithmatex">\(N=min(X, Y)\)</span>的分布函数。</p>
 <div class="arithmatex">\[

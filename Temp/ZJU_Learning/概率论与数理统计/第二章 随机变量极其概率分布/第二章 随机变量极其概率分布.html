@@ -2389,7 +2389,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 1582 个字
+    约 1586 个字
 
 
 
@@ -2442,14 +2442,27 @@
 </tr>
 </tbody>
 </table>
-<p>其中<span class="arithmatex">\({\displaystyle p_i\geq 0，\sum_{i=1}^\infin p_i=1}\)</span></p>
+<p>其中<span class="arithmatex">\({\displaystyle p_i\geq 0，\sum_{i=1}^\infty p_i=1}\)</span></p>
 <h3 id="221-0-1">2.2.1 0-1点分布</h3>
 <blockquote>
 <p><font size=4><b>0-1分布/两点分布</b></font><br>
-设随机变量X只可能取0、1两个值，其概率分布为：
-| <span class="arithmatex">\({X}\)</span> | <span class="arithmatex">\({1}\)</span> | <span class="arithmatex">\({0}\)</span> |
-|---|---|---|
-| <span class="arithmatex">\({P}\)</span> | <span class="arithmatex">\({p}\)</span> | <span class="arithmatex">\({1-p}\)</span> |</p>
+设随机变量X只可能取0、1两个值，其概率分布为：</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\({X}\)</span></th>
+<th><span class="arithmatex">\({1}\)</span></th>
+<th><span class="arithmatex">\({0}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\({P}\)</span></td>
+<td><span class="arithmatex">\({p}\)</span></td>
+<td><span class="arithmatex">\({1-p}\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>则称X服从参数为p的0-1分布或两点分布，记作<span class="arithmatex">\({X\sim B(1,p)}\)</span></p>
 </blockquote>
 <p>0-1分布的分布律还可以写为：</p>
@@ -2504,11 +2517,13 @@ P\{X=k\}=C^{r-1}_{k-1}p^r(1-p)^{k-r}
 P(a\leq X\leq b) = F(b) - F(a)
 \]</div>
 <blockquote>
-<p><font size=4><b>分布函数的性质</b></font><br>
-1. <b>单调性：</b>若<span class="arithmatex">\({x_1 &lt; x_2}\)</span>，则<span class="arithmatex">\({F(x_1) \leq F(x_2)}\)</span>
-2. <b>有界性：</b>对任意x，有<span class="arithmatex">\({0 \leq F(x) \leq 1}\)</span>
-3. <b>右连续性：</b>对任意x，有<span class="arithmatex">\({F(x+0)=F(x)}\)</span>
-4. <b>极限性：</b><span class="arithmatex">\({F(-\infty)=0}\)</span>，<span class="arithmatex">\({F(+\infty)=1}\)</span></p>
+<p><font size=4><b>分布函数的性质</b></font><br></p>
+<ol>
+<li><b>单调性：</b>若<span class="arithmatex">\({x_1 &lt; x_2}\)</span>，则<span class="arithmatex">\({F(x_1) \leq F(x_2)}\)</span></li>
+<li><b>有界性：</b>对任意x，有<span class="arithmatex">\({0 \leq F(x) \leq 1}\)</span></li>
+<li><b>右连续性：</b>对任意x，有<span class="arithmatex">\({F(x+0)=F(x)}\)</span></li>
+<li><b>极限性：</b><span class="arithmatex">\({F(-\infty)=0}\)</span>，<span class="arithmatex">\({F(+\infty)=1}\)</span></li>
+</ol>
 </blockquote>
 <p>一般地，设离散型随机变量X的分布律为：</p>
 <div class="arithmatex">\[
@@ -2531,11 +2546,13 @@ F(x)=\int^x_{-\infty}f(t){\rm d}t
 \]</div>
 <p>称X为<b>连续型随机变量</b>，其中f(x)称为X的概率密度函数，简称<b>密度函数</b></p>
 <blockquote>
-<p><font size=4><b>概率密度函数的性质</b></font><br>
-1. <b>非负性：</b>对任意x，有<span class="arithmatex">\({f(x)\geq 0}\)</span>
-2. <b>归一性：</b><span class="arithmatex">\({\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x=1}\)</span>
-3. <b>连续性：</b>在f(x)的连续点x处，有<span class="arithmatex">\({F'(x)=f(x)}\)</span>
-4. <b>区间概率：</b>对任意区间[a,b]，有<span class="arithmatex">\({\displaystyle P\{a\leq X\leq b\}=\int_a^bf(x){\rm d}x}\)</span></p>
+<p><font size=4><b>概率密度函数的性质</b></font><br></p>
+<ol>
+<li><b>非负性：</b>对任意x，有<span class="arithmatex">\({f(x)\geq 0}\)</span></li>
+<li><b>归一性：</b><span class="arithmatex">\({\displaystyle\int_{-\infty}^{+\infty}f(x){\rm d}x=1}\)</span></li>
+<li><b>连续性：</b>在f(x)的连续点x处，有<span class="arithmatex">\({F'(x)=f(x)}\)</span></li>
+<li><b>区间概率：</b>对任意区间[a,b]，有<span class="arithmatex">\({\displaystyle P\{a\leq X\leq b\}=\int_a^bf(x){\rm d}x}\)</span></li>
+</ol>
 </blockquote>
 <p>一般来说，我们对密度函数的检验主要依据前两条性质。</p>
 <h3 id="241">2.4.1 均匀分布</h3>
@@ -2571,15 +2588,19 @@ f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad -\infty 
 \]</div>
 <p>同时有如下关系：</p>
 <div class="arithmatex">\[
-\phi(x)=\phi(-x)\\
-\Phi(x)+\Phi(-x)=1
+\begin{aligned}
+  &amp;\varphi(x)=\varphi(-x)\\ 
+  &amp;\Phi(x)+\Phi(-x)=1
+\end{aligned}
 \]</div>
 <blockquote>
-<p><font size=4><b>正态分布的性质</b></font><br>
-+ <b>对称性：</b>正态分布的密度函数关于<span class="arithmatex">\({x=\mu}\)</span>对称
-+ <b>单峰性：</b>在<span class="arithmatex">\({x=\mu}\)</span>处取最大值<span class="arithmatex">\({\frac{1}{\sqrt{2\pi}\sigma}}\)</span>
-+ <b>尾部性质：</b>当<span class="arithmatex">\({|x|\to\infty}\)</span>时，<span class="arithmatex">\({f(x)\to 0}\)</span>
-+ <b>线性性质：</b>若<span class="arithmatex">\({X\sim N(\mu,\sigma^2)}\)</span>，则<span class="arithmatex">\({Y=aX+b\sim N(a\mu+b,a^2\sigma^2)}\)</span></p>
+<p><font size=4><b>正态分布的性质</b></font><br></p>
+<ul>
+<li><b>对称性：</b>正态分布的密度函数关于<span class="arithmatex">\({x=\mu}\)</span>对称</li>
+<li><b>单峰性：</b>在<span class="arithmatex">\({x=\mu}\)</span>处取最大值<span class="arithmatex">\({\frac{1}{\sqrt{2\pi}\sigma}}\)</span></li>
+<li><b>尾部性质：</b>当<span class="arithmatex">\({|x|\to\infty}\)</span>时，<span class="arithmatex">\({f(x)\to 0}\)</span></li>
+<li><b>线性性质：</b>若<span class="arithmatex">\({X\sim N(\mu,\sigma^2)}\)</span>，则<span class="arithmatex">\({Y=aX+b\sim N(a\mu+b,a^2\sigma^2)}\)</span></li>
+</ul>
 </blockquote>
 <p>正态函数的<b>标准化：</b>若<span class="arithmatex">\({X\sim N(\mu,\sigma^2)}\)</span>，则<span class="arithmatex">\({\frac{X-\mu}{\sigma}\sim N(0,1)}\)</span></p>
 <p>也就是：</p>
@@ -2589,9 +2610,11 @@ P(a&lt;X&lt;b)=F(b)-F(a)=\Phi(\frac{b-\mu}{\sigma})-\Phi(\frac{a-\mu}{\sigma})
 <p>所以所有正态函数都可以转化为标准正态函数的情况，根据一张标准正态分布表，就可以求出所有正态函数的相应结果。</p>
 <p>我们同样有常用的<span class="arithmatex">\({3\sigma}\)</span>法则：</p>
 <div class="arithmatex">\[
-P\{|X-\mu|\leq\sigma\}\approx 0.6826\\
-P\{|X-\mu|\leq 2\sigma\}\approx 0.9544\\
-P\{|X-\mu|\leq 3\sigma\}\approx 0.9974
+\begin{aligned}
+  &amp;P\{|X-\mu|\leq\sigma\}\approx 0.6826\\
+  &amp;P\{|X-\mu|\leq 2\sigma\}\approx 0.9544\\
+  &amp;P\{|X-\mu|\leq 3\sigma\}\approx 0.9974
+\end{aligned}
 \]</div>
 <p>一般认为超出<span class="arithmatex">\({3\sigma}\)</span>的数据是意外的，无效的，无需考虑。</p>
 <h3 id="243">2.4.3 指数分布</h3>

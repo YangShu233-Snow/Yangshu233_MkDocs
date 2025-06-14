@@ -2401,7 +2401,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 1310 个字
+    约 1425 个字
 
 
 
@@ -2412,7 +2412,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
     </svg>
-    预计阅读时间 4 分钟
+    预计阅读时间 5 分钟
 
 
 
@@ -2463,8 +2463,8 @@ E(Z) = E(h(X, Y)) = \int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}h(x, y)f(x, 
 E(X) = \int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}xf(x, y){\rm d}x{\rm d}y
 \]</div>
 <p>这里举出一个特别有意思的题目：</p>
-<p>设X服从<span class="arithmatex">\(U(-1,2)\)</span>，令<span class="arithmatex">\(Y=max{X, 0}\)</span>，求<span class="arithmatex">\(E(Y)\)</span>。</p>
-<p>值得注意的是，<span class="arithmatex">\(Y\)</span>既不是离散型，也不是连续型（因为<span class="arithmatex">\(P(Y=0) = P(max\{X, 0\} = 0) = P(X\leq 0) = \frac{1}{3}\)</span></p>
+<p>设X服从<span class="arithmatex">\(U(-1,2)\)</span>，令<span class="arithmatex">\(Y=max({X, 0})\)</span>，求<span class="arithmatex">\(E(Y)\)</span>。</p>
+<p>值得注意的是，<span class="arithmatex">\(Y\)</span>既不是离散型，也不是连续型，因为<span class="arithmatex">\(P(Y=0) = P(max\{X, 0\} = 0) = P(X\leq 0) = \frac{1}{3}\)</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
   解：E(Y) &amp;= E(g(X))\\
@@ -2488,17 +2488,20 @@ E(X) = \int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}xf(x, y){\rm d}x{\rm d}y
 <ul>
 <li><b>常数的数学期望等于其自己：</b><span class="arithmatex">\(E(C)=C\)</span></li>
 <li><b>常数可外提：</b><span class="arithmatex">\(E(CX) = CE(X)\)</span></li>
-<li><b>数学期望可加性：</b><span class="arithmatex">\(E(aX+bY+c) = aE(X) + bE(Y) + c\)</span><br>
-  由上推广：
-  <span class="arithmatex">\(<span class="arithmatex">\(E(c_0 + \sum^n_{i=1}c_iX_i) = c_0 + \sum^n_{i=1}c_iE(X_i)\)</span>\)</span></li>
-<li><b>数学期望可乘性：</b><span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span><br>
-  以上性质当且<b>两个变量独立</b>或者<b>无线性关系</b></li>
+<li>
+<p><b>数学期望可加性：</b><span class="arithmatex">\(E(aX+bY+c) = aE(X) + bE(Y) + c\)</span><br>
+  由上推广：</p>
+<div class="arithmatex">\[E(c_0 + \sum^n_{i=1}c_iX_i) = c_0 + \sum^n_{i=1}c_iE(X_i)\]</div>
+</li>
+</ul>
+<ul>
+<li><b>数学期望可乘性：</b><span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span>，该性质当且<b>两个变量独立</b>或者<b>无线性关系</b></li>
 </ul>
 <h2 id="42">4.2 方差</h2>
 <blockquote>
 <p><font size=4><b>方差</b></font><br>
-定义：设<span class="arithmatex">\(X\)</span>是随机变量，若<span class="arithmatex">\(E[(X-E(X))^2]\)</span>存在，则称其为<span class="arithmatex">\(X\)</span>的方差，记为<span class="arithmatex">\(Var(X)\)</span>或<span class="arithmatex">\(D(X)\)</span>，即：
-<span class="arithmatex">\(<span class="arithmatex">\(Var(X) = E[(X-E(X))^2]\)</span>\)</span></p>
+定义：设<span class="arithmatex">\(X\)</span>是随机变量，若<span class="arithmatex">\(E[(X-E(X))^2]\)</span>存在，则称其为<span class="arithmatex">\(X\)</span>的方差，记为<span class="arithmatex">\(Var(X)\)</span>或<span class="arithmatex">\(D(X)\)</span>，即：</p>
+<div class="arithmatex">\[Var(X) = E[(X-E(X))^2]\]</div>
 <p>将<span class="arithmatex">\(\sigma(X)=\sqrt{Var(X)}\)</span>记为<span class="arithmatex">\(\sigma_X\)</span>，称为<span class="arithmatex">\(X\)</span>的标准差或均方差，它与<span class="arithmatex">\(X\)</span>有相同的量纲。</p>
 </blockquote>
 <p>方差<span class="arithmatex">\(Var(X)\)</span>刻画了<span class="arithmatex">\(X\)</span>取值的分散程度：</p>
@@ -2539,8 +2542,7 @@ Var(aX+bY+c) = a^2Var(X) + b^2Var(Y)
 <h3 id="431">4.3.1 协方差</h3>
 <blockquote>
 <p><font size=4><b>协方差</b></font><br>
-记作：
-<span class="arithmatex">\(<span class="arithmatex">\(Cov(X, Y) = E\{[X-E(X)][Y-E(Y)]\}\)</span>\)</span></p>
+记作：<span class="arithmatex">\(Cov(X, Y) = E\{[X-E(X)][Y-E(Y)]\}\)</span></p>
 </blockquote>
 <p>由上式，协方差有计算公式：</p>
 <div class="arithmatex">\[
@@ -2567,8 +2569,8 @@ Var\left(\sum^n_{i=1}X_i\right) = \sum^n_{i=1}Var(X_i) + \sum^n_{i=1}\sum^n_{j=1
 <h3 id="432">4.3.2 相关系数</h3>
 <blockquote>
 <p><font size=4><b>相关系数</b></font><br>
-记作：
-<span class="arithmatex">\(<span class="arithmatex">\(\rho_{XY} = \frac{Cov(X, Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}}\)</span>\)</span></p>
+记作：</p>
+<div class="arithmatex">\[\rho_{XY} = \frac{Cov(X, Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}}\]</div>
 <p>以上条件是<span class="arithmatex">\(E(X^2)\)</span>与<span class="arithmatex">\(E(Y^2)\)</span>均存在。</p>
 </blockquote>
 <p>由标准化定义：</p>
@@ -2597,13 +2599,16 @@ X^* = \frac{X - E(X)}{\sqrt{Var(X)}},\quad Y^* = \frac{Y - E(Y)}{\sqrt{Var(Y)}}
 <li><span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span></li>
 <li><span class="arithmatex">\(Var(X+Y) = Var(X) + Var(Y)\)</span></li>
 </ul>
-<p>在实际问题中，可以用<b>独立可推不相关，相关可推不独立</b>的结论进行判断。</p>
-<p>特别地，对于<span class="arithmatex">\((X, Y)\)</span>服从二维正态分布，则<span class="arithmatex">\(X, Y\)</span>相互独立是<span class="arithmatex">\(X, Y\)</span>不相关的充分必要条件。</p>
+<p>在实际问题中，可以用<b>独立可推不相关，相关可推不独立</b>的结论进行判断。但是以上两个结论均不能倒推，也就是不相关/不独立不能推出两者独立/相关。</p>
+<p>特别地，对于<span class="arithmatex">\((X, Y)\)</span>服从二维正态分布，则<span class="arithmatex">\(X, Y\)</span>相互独立是<span class="arithmatex">\(X, Y\)</span>不相关的充分必要条件，也就是两者等价。</p>
 <h2 id="44">4.4 其他数字特征</h2>
 <h3 id="441">4.4.1 距</h3>
 <p>定义：<span class="arithmatex">\(X, Y\)</span>为随机变量。</p>
-<p>若<span class="arithmatex">\(\mu_k = E(X^k)\quad k=1,2,\dots\)</span>存在，称其为X的k阶原点距。</p>
-<p>称</p>
+<p>若</p>
+<div class="arithmatex">\[
+\mu_k = E(X^k)\quad k=1,2,\dots
+\]</div>
+<p>存在，称其为X的k阶原点距。称</p>
 <div class="arithmatex">\[
 \nu_k = E[(X-E(X))^k]
 \]</div>
@@ -2617,7 +2622,11 @@ E[(X-E(X))^k(X-E(X))^l]
 \]</div>
 <p>为X与Y的k+l阶混合中心距。</p>
 <h3 id="442">4.4.2 分位数</h3>
-<p>略。</p>
+<p>设连续型随机变量<span class="arithmatex">\(X\)</span>的分布函数和密度函数分别为<span class="arithmatex">\(F(x)\)</span>与<span class="arithmatex">\(f(x)\)</span>，对任意的<span class="arithmatex">\(0&lt;\alpha&lt;1\)</span>，称满足条件</p>
+<div class="arithmatex">\[
+P\{X&gt;x_\alpha\} = 1 - F(X_\alpha) = \int^{+\infty}_{x_\alpha}f(x){\rm d}x = \alpha
+\]</div>
+<p>的实数<span class="arithmatex">\(x_\alpha\)</span>为随机变量<span class="arithmatex">\(X\)</span>（或者相应分布）的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b>（或上（侧）<span class="arithmatex">\(\alpha\)</span>分位点）。</p>
 <h2 id="45">4.5 多维随机变量的数字特征</h2>
 <p>关于n维正态分布有一些很好的性质，有如下几个：</p>
 <ul>
