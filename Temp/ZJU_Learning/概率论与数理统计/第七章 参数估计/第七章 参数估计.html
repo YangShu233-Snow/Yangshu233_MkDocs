@@ -2599,7 +2599,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2764 个字
+    约 2808 个字
 
 
 
@@ -2776,7 +2776,7 @@ P\left\{\hat{\theta}_1(X_1,X_2,\cdots,X_n)&lt; \theta\right\} = 1-\alpha,\qquad\
 <p>设总体有概率密度（或概率分布律）<span class="arithmatex">\(f(x,\theta)\)</span>，其中<span class="arithmatex">\(\theta\)</span>是待估的未知参数，并设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是来自该总体<span class="arithmatex">\(X\)</span>的样本，如果样本和未知参数<span class="arithmatex">\(\theta\)</span>的函数<span class="arithmatex">\(G(X_1,X_2,\cdots,X_n;\theta)\)</span>的分布不依赖于未知参数，且完全已知，则称它为枢轴量。</p>
 <p>我们可以根据以下三步来寻找<span class="arithmatex">\(\theta\)</span>的置信区间：</p>
 <ol>
-<li>根据得到的样本构造函数<span class="arithmatex">\(G(X_1,X_2,\cdots,X_n)\)</span>，使其<b>含有待估参数<span class="arithmatex">\(\theta\)</span></b>，<b>含有总体已知信息</b>，分布<b>不依赖于<span class="arithmatex">\(\theta\)</span>以外的未知参数</b>，并且<b>分布已知</b>。</li>
+<li>根据得到的样本构造函数<span class="arithmatex">\(G(X_1,X_2,\cdots,X_n)\)</span>，使其<b>含有待估参数<span class="arithmatex">\(\theta\)</span></b>，含有<b>待估参数的点估计</b>，<b>含有总体已知信息</b>，分布<b>不依赖于<span class="arithmatex">\(\theta\)</span>以外的未知参数</b>，并且<b>分布已知</b>。</li>
 <li>运用奈曼原则。对于给定的置信度<span class="arithmatex">\(1-\alpha\)</span>，确定尽可能大的<span class="arithmatex">\(a\)</span>，尽可能小的<span class="arithmatex">\(b\)</span>，使得<span class="arithmatex">\(P\left\{a &lt; G(\theta) &lt; b\right\} \geq 1-\alpha\)</span>。<br><b>注：</b>求双侧置信区间时，a和b分别是相应分布的<span class="arithmatex">\(\displaystyle 1-\frac{\alpha}{2}\)</span>和<span class="arithmatex">\(\displaystyle\frac{\alpha}{2}\)</span>分位数，但这种估计对非对称分布的情况不是最优解，但在大多数情况中依然足够。</li>
 <li>
 <p>等价变换。若能从<span class="arithmatex">\(a&lt;G(\theta)&lt;b\)</span>得到等价不等式</p>
@@ -2816,6 +2816,7 @@ D_i = X_i - Y_i,\quad i=1,2,\cdots,n
 <p>这样<span class="arithmatex">\(D_i, i=1,2,\cdots,n\)</span>消除了同组内某些因素造成的差异，可以将<span class="arithmatex">\(D_1,\cdots,D_n\)</span>独立同分布，为<span class="arithmatex">\(N(\mu_D, \sigma_D^2)\)</span>。</p>
 <h3 id="742">7.4.2 双正态总体的情形</h3>
 <p>设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为来自正态总体<span class="arithmatex">\(X_1\sim N(\mu_1, \sigma^2_1)\)</span>的样本，<span class="arithmatex">\(Y_1,Y_2,\cdots,Y_m\)</span>为来自正态总体<span class="arithmatex">\(X_2\sim N(\mu_2, \sigma^2_2)\)</span>的样本，<span class="arithmatex">\(\overline{X}\)</span>和<span class="arithmatex">\(\overline{Y}\)</span>分别为样本均值，<span class="arithmatex">\(S^2_X\)</span>和<span class="arithmatex">\(S^2_Y\)</span>分别为样本方差，置信度为<span class="arithmatex">\(1-\alpha\)</span>。</p>
+<p>以下我们讨论对均值差<span class="arithmatex">\(\mu_1-\mu_2\)</span>和方差比<span class="arithmatex">\(\displaystyle\frac{\sigma_1}{\sigma_2}\)</span>两者如何进行区间估计。</p>
 <h4 id="7421">7.4.2.1 均值差的置信区间</h4>
 <p>以下分三种不同的情况讨论：</p>
 <p>当<span class="arithmatex">\(\sigma^2_1\)</span>和<span class="arithmatex">\(\sigma^2_2\)</span>已知时，</p>
