@@ -2389,7 +2389,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2469 个字
+    约 2467 个字
 
 
 
@@ -2449,7 +2449,7 @@
 <li><span class="arithmatex">\(Var(\overline{X}) = \frac{Var(X)}{n}\)</span></li>
 <li><span class="arithmatex">\(E(S^2) = Var(X)\)</span></li>
 </ul>
-<p>这里就前文没有讲过的<b>分位数</b>的概念做一个简单的补充：</p>
+<p>这里就前文简略带过的<b>分位数</b>的概念再做一个强调：</p>
 <p>设<span class="arithmatex">\(X\sim N(0,1)\)</span>，若<span class="arithmatex">\(z_\alpha\)</span>满足条件<span class="arithmatex">\(P\{X&gt;z_\alpha\}=\alpha\)</span>，则称<span class="arithmatex">\(z_\alpha\)</span>为该标准正态分布的<b>上侧<span class="arithmatex">\(\mathbf{\alpha}\)</span>分位数</b>。</p>
 <h2 id="62">6.2 常见的分布</h2>
 <p>在一般情况下，我们要判断随机抽样得到的样本点的精确分布是很困难的。但是，如果我们的统计量在总体上大致符合正态分布，我们有常见的三种分布：<span class="arithmatex">\(\chi^2\)</span>分布，<span class="arithmatex">\(t\)</span>分布与<span class="arithmatex">\(F\)</span>分布来精确描述其分布！</p>
@@ -2474,9 +2474,11 @@ f_{\chi^2}(x) = \begin{cases}
 <li><b>数学期望和方差：</b>设<span class="arithmatex">\(Y\sim\chi^2(n)\)</span>，则，
   $$ E(Y)=n,\quad Var(Y)=2n $$
   这是一个<b>非常好用的性质</b>。</li>
-<li><b>分位数：</b>对于给定的正数<span class="arithmatex">\(\alpha，0&lt;\alpha&lt;1\)</span>，称满足条件
-  $$ P{\chi^2&gt;\chi^2_\alpha(n)}=\int^{+\infty}<em>{\chi^2</em>\alpha(n)}f_{\chi^2}(x){\rm d}x =\alpha $$
-  的<span class="arithmatex">\(\chi^2_\alpha(n)\)</span>为<span class="arithmatex">\(\chi^2(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b></li>
+<li>
+<p><b>分位数：</b>对于给定的正数<span class="arithmatex">\(\alpha，0&lt;\alpha&lt;1\)</span>，称满足条件</p>
+<div class="arithmatex">\[ P\{\chi^2&gt;\chi^2_\alpha(n)\}=\int^{+\infty}_{\chi^2_\alpha(n)}f_{\chi^2}(x){\rm d}x =\alpha \]</div>
+<p>的<span class="arithmatex">\(\chi^2_\alpha(n)\)</span>为<span class="arithmatex">\(\chi^2(n)\)</span>分布的<b>上（侧）<span class="arithmatex">\(\alpha\)</span>分位数</b></p>
+</li>
 </ul>
 <p>下举一个例题：</p>
 <p>设总体<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，其中<span class="arithmatex">\(\mu,\sigma\)</span>已知，<span class="arithmatex">\((X_1,X_2,\cdots,X_n\)</span>是取自总体<span class="arithmatex">\(X\)</span>的样本，求：</p>
