@@ -1158,11 +1158,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/%E7%AC%AC%E5%8D%81%E7%AB%A0%20%E9%86%9B%E5%92%8C%E9%85%AE%E4%BA%B2%E5%92%8C%E5%8A%A0%E6%88%90%E5%8F%8D%E5%BA%94/%E7%AC%AC%E5%8D%81%E7%AB%A0%20%E9%86%9B%E5%92%8C%E9%85%AE%E4%BA%B2%E5%92%8C%E5%8A%A0%E6%88%90%E5%8F%8D%E5%BA%94.html" class="md-nav__link">
+      <a href="../../有机化学/第十章 醛和酮亲和加成反应/第十章 醛和酮亲核加成反应.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    第十章 醛和酮亲和加成反应
+    第十章 醛和酮亲核加成反应
   </span>
   
 
@@ -1184,6 +1184,27 @@
   
   <span class="md-ellipsis">
     第十三章 胺及其衍生物
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E7%BE%B0%E5%9F%BA%CE%B1-%E7%A2%B3%E4%B8%8A%E7%9A%84%E5%8F%8D%E5%BA%94/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E7%BE%B0%E5%9F%BA%CE%B1-%E7%A2%B3%E4%B8%8A%E7%9A%84%E5%8F%8D%E5%BA%94.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第十二章 羰基α-碳上的反应
   </span>
   
 
@@ -2599,7 +2620,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.41L11.59 21.41A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M6.5 8A1.5 1.5 0 1 1 8 6.5A1.5 1.5 0 0 1 6.5 8M11.59 15.41L7.59 11.41L9 10L13 14M15.59 14.41L10.09 8.91L11.5 7.5L17 13Z"/>
     </svg>
-    约 2808 个字
+    约 2914 个字
 
 
 
@@ -2610,7 +2631,7 @@
     <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 3px;" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
     </svg>
-    预计阅读时间 9 分钟
+    预计阅读时间 10 分钟
 
 
 
@@ -2663,6 +2684,11 @@ A_i = \frac{1}{n}\sum^n_{j=1}X^i_j \xrightarrow{P} E(X^i) = \mu_i
 <li>依据大数定理回带<b>样本i阶原点矩</b>，算出参数<b>估计值</b>。</li>
 </ol>
 <p>特别注意的是，除了第三步，前两步的参数都是准确的，而非估计。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>指数分布<span class="arithmatex">\(E(\lambda)\)</span>中，<span class="arithmatex">\(\lambda\)</span>矩估计为<span class="arithmatex">\(\frac{1}{\overline{X}} = \frac{n}{\displaystyle\sum^n_{i=1}X_i}\)</span>。</p>
+<p>正态分布<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>中，<span class="arithmatex">\(\mu\)</span>的矩估计为<span class="arithmatex">\(\overline{X}\)</span>，<span class="arithmatex">\(\sigma^2\)</span>的矩估计为<span class="arithmatex">\(\displaystyle\frac{1}{n}\sum^n_{i=1}(X_i-\overline{X})^2\)</span>。</p>
+</div>
 <h3 id="712">7.1.2 最大似然估计</h3>
 <p>最大似然估计提出背景如下：</p>
 <blockquote>
@@ -2708,6 +2734,11 @@ l(\theta) = \ln L(\theta) = \sum^n_{i=1}\ln f(x_i;\theta)
 <li>求导取零点</li>
 </ol>
 <p>特别地，当求导得到的导数永不为0的时候，需要借助<b>最大似然估计的存在性</b>来估计参数，也就是在题目背景成立的前提下求得极大值点。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>泊松分布<span class="arithmatex">\(P(\lambda)\)</span>中，<span class="arithmatex">\(\lambda\)</span>的矩估计为<span class="arithmatex">\(\overline{X}\)</span>。</p>
+<p>正态分布<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>中，<span class="arithmatex">\(\mu\)</span>的矩估计为<span class="arithmatex">\(\overline{X}\)</span>，<span class="arithmatex">\(\sigma^2\)</span>的矩估计为<span class="arithmatex">\(\displaystyle\frac{1}{n}\sum^n_{i=1}(X_i-\overline{X})^2\)</span>。</p>
+</div>
 <h2 id="72">7.2 估计量的评价标准</h2>
 <p>常用的评价标准有<b>无偏性、有效性、均方误差和相合性</b>。</p>
 <h3 id="721">7.2.1 无偏性准则</h3>
